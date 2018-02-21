@@ -1,7 +1,7 @@
 // This Represents our API Data
 
 [{
-  "text": `${<a href="www.google.com">Testing Image Click</a>}`,
+  "text": "Test",
   "value": 492
 }, {
   "text": "Ben",
