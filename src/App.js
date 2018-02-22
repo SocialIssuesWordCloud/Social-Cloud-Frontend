@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import randomColor from 'randomcolor';
 import TagCloud from 'react-tag-cloud';
 import CloudItem from './Components/CloudItem';
+import Header from './Components/Header';
 import data from './hello.json';
 
 const styles = {
@@ -32,7 +33,7 @@ class App extends Component {
       console.log(data),
       <div className="app-outer">
         <div className="app-inner">
-          <h1>react-tag-cloud demo</h1>
+          <Header />
           <TagCloud
             className="tag-cloud"
             style={{
