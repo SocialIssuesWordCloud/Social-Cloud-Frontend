@@ -17,7 +17,7 @@ const styles = {
 
 const newData = data.map(item => { 
   console.dir('thing', item);
-  return <a href={item.link}>{item.text}</a>
+  return <a href={item.link}><div>{item.text}</div></a>
  });
 
 class App extends Component {
@@ -46,20 +46,6 @@ class App extends Component {
               padding: 5
             }}
           >
-
-            <div
-              style={{
-                fontFamily: 'serif',
-                fontSize: 40,
-                fontStyle: 'italic',
-                fontWeight: 'bold',
-                color: randomColor()
-              }}
-            >
-              Futurama
-            </div>
-            <CloudItem text="Custom item, Hover me!" />
-            <CloudItem text="Custom item 2, Hover me!" />
             { newData }
           </TagCloud>
         </div>
@@ -69,7 +55,22 @@ class App extends Component {
 }
 
 export default App;
-{/* <div style={styles.large}>Transformers</div>
+{
+  /*
+
+  <div style={{
+                fontFamily: 'serif',
+                fontSize: 40,
+                fontStyle: 'italic',
+                fontWeight: 'bold',
+                color: randomColor()
+              }}
+            >
+            </div>
+            <CloudItem text="Custom item, Hover me!" />
+            <CloudItem text="Custom item 2, Hover me!" />
+
+             <div style={styles.large}>Transformers</div>
             <div style={styles.large}>Simpsons</div>
             <div style={styles.large}>Dragon Ball</div>
             <div style={styles.large}>Rick & Morty</div>
@@ -106,4 +107,5 @@ export default App;
             <div style={styles.small}>Starcom</div>
             <div style={styles.small}>Cops</div>
             <div style={styles.small}>Alfred J. Kwak</div>
-            <div style={styles.small}>Dr Snuggles</div> */}
+            <div style={styles.small}>Dr Snuggles</div> */
+}
