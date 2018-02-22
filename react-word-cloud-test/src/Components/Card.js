@@ -6,7 +6,7 @@ class ProfileCard extends React.Component {
     return (
       <div>
         <h2></h2>
-        <img src="http://via.placeholder.com/350x150" alt=" Image" />
+        <img src="http://via.placeholder.com/350x150" alt=" My Shot" />
       </div>
     );
   }
