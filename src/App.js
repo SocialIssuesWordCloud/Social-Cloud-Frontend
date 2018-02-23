@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
-import randomColor from 'randomcolor';
-import TagCloud from 'react-tag-cloud';
-import CloudItem from './Components/CloudItem';
-import Header from './Components/Header';
-import data from './hello.json';
+import React, { Component } from "react";
+import randomColor from "randomcolor";
+import TagCloud from "react-tag-cloud";
+import CloudItem from "./Components/CloudItem";
+import Header from "./Components/Header";
+import data from "./hello.json";
+import SearchAPI from "./Components/ApiSearch";
+
+var baseURL = "https://social-cloud-database.herokuapp.com/";
 
 const styles = {
   large: {
     fontSize: 60,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   },
   small: {
     opacity: 0.7,
@@ -17,7 +20,9 @@ const styles = {
 };
 
 const newData = data.map(item => {
-  return <CloudItem style={{ fontSize: 30 }} text={item.text} href={item.link} />;
+  return (
+    <CloudItem style={{ fontSize: 30 }} text={item.text} href={item.link} />
+  );
 });
 
 class App extends Component {
@@ -27,31 +32,60 @@ class App extends Component {
     }, 3000);
   }
 
+  findWOEID = id => {
+    return this.state.woeid.find(location => {
+      return location.id === id;
+    });
+  };
+
+  getLocation = event => {
+    event.preventDefault();
+    var data = new FormData(event.target);
+    var locationWOEID = this.findWOEID(parseInt(data.get("WOE_ID")));
+    return {
+      WOE_ID: locationWOEID
+    };
+  };
+
+  searchAPILocations = event => {
+    event.preventDefault();
+    fetch(baseURL + "tweets", this.getLocation(event))
+      .then(response => {
+        this.setState({
+          woeid: response.woeid
+        });
+      })
+      .catch(error => console.log(error));
+  };
+
   render() {
     return (
       console.log(data),
-      <div className="app-outer">
-        <div className="app-inner">
-          <Header />
-          <TagCloud
-            className="tag-cloud"
-            style={{
-              fontFamily: 'sans-serif',
-              fontSize: () => Math.round(Math.random() * 50) + 16,
-              fontSize: 30,
-              color: () =>
-                randomColor({
-                  hue: 'blue'
-                }),
-              padding: 5
-            }}
-          >
-          { newData }
-          <CloudItem text="Custom item, Hover me!" />
-          <CloudItem text="Custom item 2, Hover me!" />
-          </TagCloud>
+      (
+        <div className="app-outer">
+          <div className="app-inner">
+            <Header />
+            <TagCloud
+              className="tag-cloud"
+              style={{
+                fontFamily: "sans-serif",
+                fontSize: () => Math.round(Math.random() * 50) + 16,
+                fontSize: 30,
+                color: () =>
+                  randomColor({
+                    hue: "blue"
+                  }),
+                padding: 5
+              }}
+            >
+              {newData}
+              <CloudItem text="Custom item, Hover me!" />
+              <CloudItem text="Custom item 2, Hover me!" />
+            </TagCloud>
+            <SearchAPI searchAPILocations={this.searchAPILocations}/>
+          </div>
         </div>
-      </div>
+      )
     );
   }
 }
