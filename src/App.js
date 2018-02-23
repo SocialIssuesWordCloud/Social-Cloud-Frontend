@@ -53,7 +53,6 @@ class App extends Component {
     fetch(baseURL)
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.setState({
           personalLocations: response.personalLocations,
           woeid: response.woeid
@@ -89,25 +88,18 @@ class App extends Component {
     });
   };
 
-  getLocation = event => {
-    event.preventDefault();
-    var data = new FormData(event.target);
-    var locationWOEID = this.findWOEID(parseInt(data.get("WOE_ID")));
-    return {
-      WOE_ID: locationWOEID
-    };
-  };
 
   searchAPILocations = event => {
     event.preventDefault();
     var data = new FormData(event.target);
-    var id = parseInt(data.get("WOE_ID"));
-    const payload = this.getLocation(event);
-
-    fetch(baseURL + "tweets/" + id)
+    var location = this.findWOEID(parseInt(data.get("APIWoeid")));
+    var woeid = location.WOE_ID
+    console.log(woeid);
+    fetch(baseURL + "tweets/" + woeid)
+      .then(response => response.json())
       .then(response => {
         this.setState({
-          woeid: response.woeid
+          tweets: response
         });
       })
       .catch(error => console.log(error));
