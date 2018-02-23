@@ -4,10 +4,8 @@ export class SearchAPI extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: false,
-      count: 0
+      id: "0"
     };
-    Modal.setAppElement(document.body);
   }
 
   generateLocations = location => {
@@ -24,7 +22,15 @@ export class SearchAPI extends React.Component {
         <h2 id="api-search">Search for Location</h2>
         <form id="search-form" onSubmit={this.props.searchAPILocations}>
           <label htmlFor="APIWoeid">Find your location:</label>
-          <select name="APIWoeid" id="APIWoeid">
+          <select
+            name="APIWoeid"
+            id="APIWoeid"
+            value={this.state.id}
+            onChange={this.change}
+            onClick={this.change}
+            onKeyUp={this.change}
+            onMouseLeave={this.change}
+          >
             <option value="" disabled selected>
               Select something...
             </option>
