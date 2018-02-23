@@ -5,6 +5,7 @@ import CloudItem from "./Components/CloudItem";
 import Header from "./Components/Header";
 import data from "./hello.json";
 
+var apiURL = "https://social-cloud-database.herokuapp.com/tweets";
 var baseURL = "https://social-cloud-database.herokuapp.com/";
 
 // (function initPage(){
@@ -13,26 +14,17 @@ var baseURL = "https://social-cloud-database.herokuapp.com/";
 //   });
 // })();
 
-// const newData = response.map(item => {
-//   return <CloudItem style={{ fontSize: 30 }} text={item.name} href={item.url} />;
-// });
+// const styles = {
+//   large: {
+//     fontSize: 60,
+//     fontWeight: "bold"
+//   },
+//   small: {
+//     opacity: 0.7,
+//     fontSize: 16
+//   }
+// };
 
-const styles = {
-  large: {
-    fontSize: 60,
-    fontWeight: "bold"
-  },
-  small: {
-    opacity: 0.7,
-    fontSize: 16
-  }
-};
-
-const newData = data.map(item => {
-  return (
-    <CloudItem style={{ fontSize: 30 }} text={item.text} href={item.link} />
-  );
-});
 
 class App extends Component {
   constructor(props) {
@@ -43,32 +35,40 @@ class App extends Component {
       tweets: []
     };
   }
-  //   // setInterval(() => {
-  //   this.getData();
-  //   //   this.forceUpdate();
-  //   // }, 15000);
-  // }
 
   componentDidMount() {
     fetch(baseURL)
+      .then(response => response.json())
       .then(response => {
-        this.setState({
-          personalLocations: response.personalLocations,
-          woeid: response.woeid,
-          tweets: response.tweets
-        });
+        this.setState({ personalLocations: response.personalLocations, woeid: response.woeid });
+        console.log("personal locations and WOEID :", response);
       })
+      .then(() => this.getData())
       .catch(error => console.log(error));
   }
 
   getData = () => {
-    let apiURL = "https://social-cloud-database.herokuapp.com/tweets";
     return fetch(apiURL)
       .then(response => response.json())
       .then(response => {
-        this.setState({ tweets: response });
-        console.log(this.state.tweets.tweets[0].trends);
+        this.setState({ tweets: response.tweets[0].trends });
+        console.log("tweets :", response.tweets[0].trends);
       });
+  };
+  
+  // setInterval(() => {
+  //  this.forceUpdate();
+  // }, 15000)
+
+  // populateCloud = (item) => {
+  //   this.state.tweets.map(item => {
+  //     return <CloudItem style={{ fontSize: 30 }} text={item.name} href={item.url} />;
+  //   });
+  // }
+
+  populateCloud = item => {
+    console.log("IN THE METHOD:", item);
+    return <CloudItem style={{ fontSize: 30 }} text={item.name} href={item.url} />;
   };
 
   // const styles = {
@@ -126,7 +126,7 @@ class App extends Component {
               padding: 5
             }}
           >
-            {/* { newData } */}
+            {this.state.tweets.map(item => this.populateCloud(item))}
             <CloudItem text="Custom item, Hover me!" />
             <CloudItem text="Custom item 2, Hover me!" />
           </TagCloud>
