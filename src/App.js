@@ -4,6 +4,7 @@ import TagCloud from "react-tag-cloud";
 import CloudItem from "./Components/CloudItem";
 import Header from "./Components/Header";
 import data from "./hello.json";
+import { SearchAPI } from "./Components/ApiSearch";
 
 var apiURL = "https://social-cloud-database.herokuapp.com/tweets";
 var baseURL = "https://social-cloud-database.herokuapp.com/";
@@ -31,8 +32,7 @@ class App extends Component {
     super(props);
     this.state = {
       personalLocations: [],
-      woeid: [],
-      tweets: []
+      woeid: []
     };
   }
 
@@ -40,8 +40,10 @@ class App extends Component {
     fetch(baseURL)
       .then(response => response.json())
       .then(response => {
-        this.setState({ personalLocations: response.personalLocations, woeid: response.woeid });
-        console.log("personal locations and WOEID :", response);
+        this.setState({
+          personalLocations: response.personalLocations,
+          woeid: response.woeid
+        });
       })
       .then(() => this.getData())
       .catch(error => console.log(error));
@@ -88,21 +90,18 @@ class App extends Component {
     });
   };
 
-  getLocation = event => {
-    event.preventDefault();
-    var data = new FormData(event.target);
-    var locationWOEID = this.findWOEID(parseInt(data.get("WOE_ID")));
-    return {
-      WOE_ID: locationWOEID
-    };
-  };
 
   searchAPILocations = event => {
     event.preventDefault();
-    fetch(baseURL + "tweets", this.getLocation(event))
+    var data = new FormData(event.target);
+    var location = this.findWOEID(parseInt(data.get("APIWoeid")));
+    var woeid = location.WOE_ID
+    console.log(woeid);
+    fetch(baseURL + "tweets/" + woeid)
+      .then(response => response.json())
       .then(response => {
         this.setState({
-          woeid: response.woeid
+          tweets: response
         });
       })
       .catch(error => console.log(error));
@@ -130,6 +129,10 @@ class App extends Component {
             <CloudItem text="Custom item, Hover me!" />
             <CloudItem text="Custom item 2, Hover me!" />
           </TagCloud>
+          <SearchAPI
+            woeidData={this.state.woeid}
+            searchAPILocations={this.searchAPILocations}
+          />
         </div>
       </div>
     );
