@@ -16,10 +16,9 @@ const styles = {
   }
 };
 
-const newData = data.map(item => { 
-  console.dir('thing', item);
-  return <a href={item.link}><div>{item.text}</div></a>
- });
+const newData = data.map(item => {
+  return <CloudItem style={{ fontSize: 30 }} text={item.text} href={item.link} />;
+});
 
 class App extends Component {
   componentDidMount() {
@@ -47,7 +46,9 @@ class App extends Component {
               padding: 5
             }}
           >
-            { newData }
+          { newData }
+          <CloudItem text="Custom item, Hover me!" />
+          <CloudItem text="Custom item 2, Hover me!" />
           </TagCloud>
         </div>
       </div>
@@ -68,8 +69,6 @@ export default App;
               }}
             >
             </div>
-            <CloudItem text="Custom item, Hover me!" />
-            <CloudItem text="Custom item 2, Hover me!" />
 
              <div style={styles.large}>Transformers</div>
             <div style={styles.large}>Simpsons</div>
