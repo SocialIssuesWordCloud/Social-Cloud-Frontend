@@ -36,21 +36,40 @@ const newData = data.map(item => {
 });
 
 class App extends Component {
-  state = { data: [] };
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      personalLocations: [],
+      woeid: [],
+      tweets: []
+    };
+  }
     // setInterval(() => {
     this.getData();
     //   this.forceUpdate();
     // }, 15000);
   }
 
+  componentDidMount() {
+    fetch(baseURL)
+       .then(response => {
+        this.setState({
+          personalLocations: response.personalLocations,
+          woeid: response.woeid,
+          tweets: response.tweets
+        });
+      })
+      .catch(error => console.log(error));
+  }
+
+
   getData = () => {
     let apiURL = "https://social-cloud-database.herokuapp.com/tweets";
     return fetch(apiURL)
       .then(response => response.json())
       .then(response => {
-        this.setState({ data: response });
-        console.log(this.state.data.tweets[0].trends);
+        this.setState({ tweets: response });
+        console.log(this.state.tweets.tweets[0].trends);
       });
   };
 
@@ -112,7 +131,7 @@ class App extends Component {
           <CloudItem text="Custom item, Hover me!" />
           <CloudItem text="Custom item 2, Hover me!" />
         </TagCloud>
-        <SearchAPI searchAPILocations={this.searchAPILocations} />
+        <SearchAPI woeidData={this.state.woeid} searchAPILocations={this.searchAPILocations} />
       </div>
     </div>;
   }
