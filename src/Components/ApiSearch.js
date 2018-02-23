@@ -4,7 +4,7 @@ export class SearchAPI extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "0"
+      id: ""
     };
   }
 
@@ -16,6 +16,12 @@ export class SearchAPI extends React.Component {
     );
   };
 
+  change = event => {
+  this.setState({id: event.target.value});
+  console.log(event.target.value);
+}
+
+
   render() {
     return (
       <div>
@@ -25,11 +31,11 @@ export class SearchAPI extends React.Component {
           <select
             name="APIWoeid"
             id="APIWoeid"
-            value={this.state.id}
             onChange={this.change}
             onClick={this.change}
             onKeyUp={this.change}
             onMouseLeave={this.change}
+            value={this.state.id}
           >
             <option value="" disabled selected>
               Select something...
