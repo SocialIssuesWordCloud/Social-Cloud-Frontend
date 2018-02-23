@@ -3,37 +3,60 @@ import randomColor from 'randomcolor';
 import TagCloud from 'react-tag-cloud';
 import CloudItem from './Components/CloudItem';
 import Header from './Components/Header';
-import data from './hello.json';
 
-const styles = {
-  large: {
-    fontSize: 60,
-    fontWeight: 'bold'
-  },
-  small: {
-    opacity: 0.7,
-    fontSize: 16
-  }
-};
+// (function initPage(){
+//   getData().then(response => {
+//     console.log(response)
+//   });
+// })();
 
-const newData = data.map(item => {
-  return <CloudItem style={{ fontSize: 30 }} text={item.text} href={item.link} />;
-});
+// const newData = response.map(item => {
+//   return <CloudItem style={{ fontSize: 30 }} text={item.name} href={item.url} />;
+// });
 
 class App extends Component {
+  state = {data:[]};
   componentDidMount() {
-    setInterval(() => {
-      this.forceUpdate();
-    }, 3000);
+    // setInterval(() => {
+      this.getData();
+    //   this.forceUpdate();
+    // }, 15000);
   }
+
+  getData = () => {
+    let apiURL = "https://social-cloud-database.herokuapp.com/tweets";
+    return fetch(apiURL).then(response => response.json())
+    .then (response => {
+      this.setState(
+        {data: response}
+      )
+      console.log(this.state.data.tweets[0].trends);
+  })
+}
+
+
+
+
+// const styles = {
+//   large: {
+//     fontSize: 60,
+//     fontWeight: 'bold'
+//   },
+//   small: {
+//     opacity: 0.7,
+//     fontSize: 16
+//   }
+// };
+
+
 
   render() {
     return (
-      console.log(data),
+      // console.log(data),
       <div className="app-outer">
         <div className="app-inner">
           <Header />
-          <TagCloud
+             <TagCloud
             className="tag-cloud"
             style={{
               fontFamily: 'sans-serif',
@@ -46,66 +69,64 @@ class App extends Component {
               padding: 5
             }}
           >
-          { newData }
+          {/* { newData } */}
           <CloudItem text="Custom item, Hover me!" />
           <CloudItem text="Custom item 2, Hover me!" />
           </TagCloud>
         </div>
       </div>
-    );
-  }
-}
+     );
+   }
+ }
+ export default App;
+ 
+  
 
-export default App;
-{
-  /*
+//   <div style={{
+//                 fontFamily: 'serif',
+//                 fontSize: 40,
+//                 fontStyle: 'italic',
+//                 fontWeight: 'bold',
+//                 color: randomColor()
+//               }}
+//             >
+//             </div>
 
-  <div style={{
-                fontFamily: 'serif',
-                fontSize: 40,
-                fontStyle: 'italic',
-                fontWeight: 'bold',
-                color: randomColor()
-              }}
-            >
-            </div>
-
-             <div style={styles.large}>Transformers</div>
-            <div style={styles.large}>Simpsons</div>
-            <div style={styles.large}>Dragon Ball</div>
-            <div style={styles.large}>Rick & Morty</div>
-            <div style={{ fontFamily: 'courier' }}>He man</div>
-            <div style={{ fontSize: 30 }}>World trigger</div>
-            <div style={{ fontStyle: 'italic' }}>Avengers</div>
-            <div style={{ fontWeight: 200 }}>Family Guy</div>
-            <div style={{ color: 'green' }}>American Dad</div>
-            <div className="tag-item-wrapper">
-              <div>Hover Me Please!</div>
-              <div className="tag-item-tooltip">HOVERED!</div>
-            </div>
-            <div>Gobots</div>
-            <div>Thundercats</div>
-            <div>M.A.S.K.</div>
-            <div>GI Joe</div>
-            <div>Inspector Gadget</div>
-            <div>Bugs Bunny</div>
-            <div>Tom & Jerry</div>
-            <div>Cowboy Bebop</div>
-            <div>Evangelion</div>
-            <div>Bleach</div>
-            <div>GITS</div>
-            <div>Pokemon</div>
-            <div>She Ra</div>
-            <div>Fullmetal Alchemist</div>
-            <div>Gundam</div>
-            <div>Uni Taisen</div>
-            <div>Pinky and the Brain</div>
-            <div>Bobs Burgers</div>
-            <div style={styles.small}>Dino Riders</div>
-            <div style={styles.small}>Silverhawks</div>
-            <div style={styles.small}>Bravestar</div>
-            <div style={styles.small}>Starcom</div>
-            <div style={styles.small}>Cops</div>
-            <div style={styles.small}>Alfred J. Kwak</div>
-            <div style={styles.small}>Dr Snuggles</div> */
-}
+//              <div style={styles.large}>Transformers</div>
+//             <div style={styles.large}>Simpsons</div>
+//             <div style={styles.large}>Dragon Ball</div>
+//             <div style={styles.large}>Rick & Morty</div>
+//             <div style={{ fontFamily: 'courier' }}>He man</div>
+//             <div style={{ fontSize: 30 }}>World trigger</div>
+//             <div style={{ fontStyle: 'italic' }}>Avengers</div>
+//             <div style={{ fontWeight: 200 }}>Family Guy</div>
+//             <div style={{ color: 'green' }}>American Dad</div>
+//             <div className="tag-item-wrapper">
+//               <div>Hover Me Please!</div>
+//               <div className="tag-item-tooltip">HOVERED!</div>
+//             </div>
+//             <div>Gobots</div>
+//             <div>Thundercats</div>
+//             <div>M.A.S.K.</div>
+//             <div>GI Joe</div>
+//             <div>Inspector Gadget</div>
+//             <div>Bugs Bunny</div>
+//             <div>Tom & Jerry</div>
+//             <div>Cowboy Bebop</div>
+//             <div>Evangelion</div>
+//             <div>Bleach</div>
+//             <div>GITS</div>
+//             <div>Pokemon</div>
+//             <div>She Ra</div>
+//             <div>Fullmetal Alchemist</div>
+//             <div>Gundam</div>
+//             <div>Uni Taisen</div>
+//             <div>Pinky and the Brain</div>
+//             <div>Bobs Burgers</div>
+//             <div style={styles.small}>Dino Riders</div>
+//             <div style={styles.small}>Silverhawks</div>
+//             <div style={styles.small}>Bravestar</div>
+//             <div style={styles.small}>Starcom</div>
+//             <div style={styles.small}>Cops</div>
+//             <div style={styles.small}>Alfred J. Kwak</div>
+//             <div style={styles.small}>Dr Snuggles</div> */
