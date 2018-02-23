@@ -28,7 +28,7 @@ export class SearchAPI extends React.Component {
             <option value="" disabled selected>
               Select something...
             </option>
-            {this.props.data.map(this.generateLocations)}
+            {this.props.woeidData.map(this.generateLocations)}
           </select>
           <input type="submit" id="search-button" value="Check Location" />
         </form>
