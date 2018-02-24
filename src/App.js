@@ -8,24 +8,6 @@ import { SearchAPI } from "./Components/ApiSearch";
 var apiURL = "https://social-cloud-database.herokuapp.com/tweets/";
 var baseURL = "https://social-cloud-database.herokuapp.com/";
 
-// (function initPage(){
-//   getData().then(response => {
-//     console.log(response)
-//   });
-// })();
-
-// const styles = {
-//   large: {
-//     fontSize: 60,
-//     fontWeight: "bold"
-//   },
-//   small: {
-//     opacity: 0.7,
-//     fontSize: 16
-//   }
-// };
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -61,12 +43,6 @@ class App extends Component {
   // setInterval(() => {
   //  this.forceUpdate();
   // }, 15000)
-
-  // populateCloud = (item) => {
-  //   this.state.tweets.map(item => {
-  //     return <CloudItem style={{ fontSize: 30 }} text={item.name} href={item.url} />;
-  //   });
-  // }
 
   populateCloud = (item) => {
     console.log("IN THE METHOD:", item);
