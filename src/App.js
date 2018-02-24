@@ -3,10 +3,9 @@ import randomColor from "randomcolor";
 import TagCloud from "react-tag-cloud";
 import CloudItem from "./Components/CloudItem";
 import Header from "./Components/Header";
-import data from "./hello.json";
 import { SearchAPI } from "./Components/ApiSearch";
 
-var apiURL = "https://social-cloud-database.herokuapp.com/tweets";
+var apiURL = "https://social-cloud-database.herokuapp.com/tweets/";
 var baseURL = "https://social-cloud-database.herokuapp.com/";
 
 // (function initPage(){
@@ -40,6 +39,7 @@ class App extends Component {
     fetch(baseURL)
       .then(response => response.json())
       .then(response => {
+        console.table(response)
         this.setState({
           personalLocations: response.personalLocations,
           woeid: response.woeid
@@ -54,7 +54,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         this.setState({ tweets: response.tweets[0].trends });
-        console.log("tweets :", response.tweets[0].trends);
+        console.log("STATE Get Data:",this.state);
       });
   };
   
@@ -68,7 +68,7 @@ class App extends Component {
   //   });
   // }
 
-  populateCloud = item => {
+  populateCloud = (item) => {
     console.log("IN THE METHOD:", item);
     return <CloudItem style={{ fontSize: 30 }} text={item.name} href={item.url} />;
   };
@@ -90,7 +90,6 @@ class App extends Component {
     });
   };
 
-
   searchAPILocations = event => {
     event.preventDefault();
     var data = new FormData(event.target);
@@ -106,36 +105,23 @@ class App extends Component {
       })
       .catch(error => console.log(error));
   };
-
+  
   render() {
-    return (
-      <div className="app-outer">
+    return <div className="app-outer">
         <div className="app-inner">
           <Header />
-          <TagCloud
-            className="tag-cloud"
-            style={{
-              fontFamily: "sans-serif",
-              fontSize: () => Math.round(Math.random() * 50) + 16,
-              fontSize: 30,
-              color: () =>
-                randomColor({
-                  hue: "blue"
-                }),
-              padding: 5
-            }}
-          >
-            {this.state.tweets.map(item => this.populateCloud(item))}
+          <TagCloud className="tag-cloud" style={{ fontFamily: 'sans-serif', fontSize: () => Math.round(Math.random() * 50) + 16, fontSize: 30, color: () => randomColor(
+                  {
+                    hue: 'blue'
+                  }
+                ), padding: 5 }}>
+            {this.state.tweets ? this.state.tweets.map(item => this.populateCloud(item)) : null}
             <CloudItem text="Custom item, Hover me!" />
             <CloudItem text="Custom item 2, Hover me!" />
           </TagCloud>
-          <SearchAPI
-            woeidData={this.state.woeid}
-            searchAPILocations={this.searchAPILocations}
-          />
+          <SearchAPI woeidData={this.state.woeid} searchAPILocations={this.searchAPILocations} />
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
