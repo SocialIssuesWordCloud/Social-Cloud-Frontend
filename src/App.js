@@ -43,11 +43,16 @@ class App extends Component {
   
   // setInterval(() => {
   //  this.forceUpdate();
-  // }, 15000)
+  // }, 5000)
 
   populateCloud = (item) => {
     console.log("IN THE METHOD:", item);
-    return <CloudItem style={{fontSize: item.tweet_volume === null ? 30 : item.tweet_volume / 1400 }} text={item.name} key={item.tweet_volume} href={item.url} />;
+    return <CloudItem style={
+      {fontSize: 
+      item.tweet_volume === null ? 30: 
+      item.tweet_volume < 18000 ? 45 : 
+      item.tweet_volume / 1200 
+      }} text={item.name} key={item.tweet_volume} href={item.url} />;
   };
 
   findWOEID = id => {
