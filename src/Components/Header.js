@@ -26,10 +26,10 @@ const Nav = styled.div`
 class Header extends React.Component {
   render() {
     return <HeaderDiv>
-      <img src={ cloud } alt="poop" height="70px" />
+        <img src={cloud} alt="poop" height="70px" />
         <h1>Social Cloud</h1>
         <Nav>
-          <li>About</li>
+          <li><a href="https://group-about.firebaseapp.com/">About</a></li>
           <li>Search</li>
         </Nav>
       </HeaderDiv>;
