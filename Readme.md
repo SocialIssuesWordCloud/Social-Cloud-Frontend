@@ -1,24 +1,16 @@
 ## Social Cloud
----
 
-The application that displays the trending social causes by location on a page.
+As events unfold in the world, social media becomes the place people engage with news and social issues. Social Cloud is a web experience that visualizes  real-time Twitter trends by location. The intuitive user interface includes Hashtags that are sized according to Tweet volume, and clicking on a trending hashtag will bring the user to the topic on Twitter.  
 
-By: 
-  - Dan Beerman
-  - Bryan Long
-  - Ben Casalino
-  - SarahEvelynn Johnson
+![Social Cloud Demo](https://github.com/BryanLong14/Social-Cloud-Frontend/blob/master/SocialCloudScreencast.gif)
 
----
-
-The Problem:
-As events unfold in the world, social media becomes the place people engage and discover events, news, and social issues. 
-We want to provide a web experience that visualizes that process real-time. 
-
+## Group Members
+- [Bryan Long](https://github.com/BryanLong14)
+- [SarahEvelynn Johnson](https://github.com/sarahevelynn)
+- [Ben Casalino](https://github.com/bencasalino)
+- [Dan Beerman](https://github.com/lebeerman)
 
 ### What's Coming? 
-- Hashtags by social trend per location
-- Specific shared content from trending subject areas: 
-  - Twitter: Tweets from trends
-  - Reddit: Top content in the for of a car per upvote on the front page
-- Saved searches by user and by th day, documenting the major social trends via user interaction over time. 
+- Sortable content from different sources: 
+  - Twitter, Reddit, FaceBook
+  - Saved searches by user and by day, documenting the major social trends via user interaction over time. 
