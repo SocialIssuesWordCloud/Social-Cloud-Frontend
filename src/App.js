@@ -49,17 +49,6 @@ class App extends Component {
     return <CloudItem style={{ fontSize: 30 }} text={item.name} href={item.url} />;
   };
 
-  // const styles = {
-  //   large: {
-  //     fontSize: 60,
-  //     fontWeight: 'bold'
-  //   },
-  //   small: {
-  //     opacity: 0.7,
-  //     fontSize: 16
-  //   }
-  // };
-
   findWOEID = id => {
     return this.state.woeid.find(location => {
       return location.id === id;
@@ -92,8 +81,6 @@ class App extends Component {
                   }
                 ), padding: 5 }}>
             {this.state.tweets ? this.state.tweets.map(item => this.populateCloud(item)) : null}
-            <CloudItem text="Custom item, Hover me!" />
-            <CloudItem text="Custom item 2, Hover me!" />
           </TagCloud>
           <SearchAPI woeidData={this.state.woeid} searchAPILocations={this.searchAPILocations} />
         </div>
