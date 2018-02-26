@@ -5,9 +5,9 @@ As events unfold in the world, social media becomes the place people engage with
 ![Social Cloud Demo](https://github.com/BryanLong14/Social-Cloud-Frontend/blob/master/SocialCloudScreencast.gif)
 
 ## Group Members
-- [Bryan Long] (https://github.com/BryanLong14)
-- [SarahEvelynn Johnson] (https://github.com/sarahevelynn)
-- [Ben Casalino] (https://github.com/bencasalino)
+- [Bryan Long](https://github.com/BryanLong14)
+- [SarahEvelynn Johnson](https://github.com/sarahevelynn)
+- [Ben Casalino](https://github.com/bencasalino)
 - [Dan Beerman](https://github.com/lebeerman)
 
 ### What's Coming? 
