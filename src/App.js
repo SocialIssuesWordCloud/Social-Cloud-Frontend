@@ -4,6 +4,7 @@ import TagCloud from "react-tag-cloud";
 import CloudItem from "./Components/CloudItem";
 import Header from "./Components/Header";
 import { SearchAPI } from "./Components/ApiSearch";
+// import "App.css" from "./App.css";
 
 var apiURL = "https://social-cloud-database.herokuapp.com/tweets/";
 var baseURL = "https://social-cloud-database.herokuapp.com/";
@@ -46,7 +47,7 @@ class App extends Component {
 
   populateCloud = (item) => {
     console.log("IN THE METHOD:", item);
-    return <CloudItem style={{ fontSize: 30 }} text={item.name} key={item.tweet_volume} href={item.url} />;
+    return <CloudItem style={{fontSize: item.tweet_volume === null ? 30 : item.tweet_volume / 1400 }} text={item.name} key={item.tweet_volume} href={item.url} />;
   };
 
   findWOEID = id => {
@@ -75,7 +76,7 @@ class App extends Component {
     return <div className="app-outer">
         <div className="app-inner">
           <Header />
-          <TagCloud className="tag-cloud" style={{ fontFamily: 'sans-serif', fontSize: () => Math.round(Math.random() * 50) + 16, fontSize: 30, color: () => randomColor(
+          <TagCloud className="tag-cloud" style={{ fontFamily: 'sans-serif', color: () => randomColor(
                   {
                     hue: 'blue'
                   }

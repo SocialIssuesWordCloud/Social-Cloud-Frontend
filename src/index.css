@@ -42,6 +42,12 @@ li{
   width: 100vw;
 }
 
+a:-webkit-any-link {
+  color: inherit !important;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
 .tag-cloud {
   flex: 1;
 }
