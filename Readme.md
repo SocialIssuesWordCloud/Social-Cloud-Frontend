@@ -18,4 +18,3 @@ As events unfold in the world, social media becomes the place people engage with
 
 ![Social Cloud Demo](https://github.com/BryanLong14/Social-Cloud-Frontend/blob/master/SocialCloudScreencast.gif)
 
-<!-- https://github.com/BryanLong14/Colorado-14ers-Frontend/blob/master/Assets/gif.gif -->
