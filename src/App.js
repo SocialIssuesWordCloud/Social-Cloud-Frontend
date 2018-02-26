@@ -29,6 +29,11 @@ class App extends Component {
         }) : null;
       })
       .then(() => this.getData())
+      .then(() => {
+        setInterval(() => {
+          this.forceUpdate();
+        }, 5000);
+      })
       .catch(error => console.log(error));
   }
 
@@ -41,9 +46,7 @@ class App extends Component {
       });
   };
   
-  // setInterval(() => {
-  //  this.forceUpdate();
-  // }, 5000)
+  
 
   populateCloud = (item) => {
     console.log("IN THE METHOD:", item);
@@ -51,7 +54,7 @@ class App extends Component {
       {fontSize: 
       item.tweet_volume === null ? 30: 
       item.tweet_volume < 18000 ? 45 : 
-      item.tweet_volume / 1200 
+      item.tweet_volume / 1100 
       }} text={item.name} key={item.tweet_volume} href={item.url} />;
   };
 
