@@ -16,6 +16,6 @@ As events unfold in the world, social media becomes the place people engage with
   - Reddit: Top content in the for of a car per upvote on the front page
 - Saved searches by user and by th day, documenting the major social trends via user interaction over time. 
 
-![Social Cloud Demo](https://github.com/BryanLong14/Social-Cloud-Frontend/Social Cloud Screencast.gif)
+![Social Cloud Demo](https://github.com/BryanLong14/Social-Cloud-Frontend/SocialCloudScreencast.gif)
 
 <!-- https://github.com/BryanLong14/Colorado-14ers-Frontend/blob/master/Assets/gif.gif -->
