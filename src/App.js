@@ -21,11 +21,11 @@ class App extends Component {
     fetch(baseURL)
       .then(response => response.json())
       .then(response => {
-        console.table(response)
-        this.setState({
+        console.table(response);
+        response.personalLocation ? this.setState({
           personalLocations: response.personalLocations,
           woeid: response.woeid
-        });
+        }) : null;
       })
       .then(() => this.getData())
       .catch(error => console.log(error));
@@ -46,7 +46,7 @@ class App extends Component {
 
   populateCloud = (item) => {
     console.log("IN THE METHOD:", item);
-    return <CloudItem style={{ fontSize: 30 }} text={item.name} href={item.url} />;
+    return <CloudItem style={{ fontSize: 30 }} text={item.name} key={item.tweet_volume} href={item.url} />;
   };
 
   findWOEID = id => {
