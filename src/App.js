@@ -4,6 +4,8 @@ import TagCloud from "react-tag-cloud";
 import CloudItem from "./Components/CloudItem";
 import Header from "./Components/Header";
 import { SearchAPI } from "./Components/ApiSearch";
+import Select from "react-select";
+import "react-select/dist/react-select.css";
 // import "App.css" from "./App.css";
 
 var apiURL = "https://social-cloud-database.herokuapp.com/tweets/";
@@ -22,7 +24,7 @@ class App extends Component {
     fetch(baseURL)
       .then(response => response.json())
       .then(response => {
-        console.table(response);
+        console.log(response);
         response.personalLocation ? this.setState({
           personalLocations: response.personalLocations,
           woeid: response.woeid
@@ -49,7 +51,6 @@ class App extends Component {
   
 
   populateCloud = (item) => {
-    console.log("IN THE METHOD:", item);
     return <CloudItem style={
       {fontSize: 
       item.tweet_volume === null ? 30: 

@@ -17,6 +17,7 @@ export class SearchAPI extends React.Component {
   };
 
   change = event => {
+    console.log("Event Target Line 20: ", event.target)
   this.setState({id: event.target.value});
   console.log(event.target.value);
 }
@@ -27,6 +28,7 @@ export class SearchAPI extends React.Component {
       <div>
         <h2 id="api-search">Search for Location</h2>
         <form id="search-form" onSubmit={this.props.searchAPILocations}>
+        {console.log("API Search line 30: ", this.state)}
           <label htmlFor="APIWoeid">Find your location:</label>
           <select
             name="APIWoeid"
