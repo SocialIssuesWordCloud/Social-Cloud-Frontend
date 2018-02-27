@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import "./App.css";
 import randomColor from "randomcolor";
 import TagCloud from "react-tag-cloud";
 import CloudItem from "./Components/CloudItem";
 import Header from "./Components/Header";
-import { SearchAPI } from "./Components/ApiSearch";
+import SubHeader from "./Components/SubHeader";
 // import "App.css" from "./App.css";
 
 var apiURL = "https://social-cloud-database.herokuapp.com/tweets/";
@@ -112,10 +113,6 @@ class App extends Component {
               ? this.state.tweets.map(item => this.populateCloud(item))
               : null}
           </TagCloud>
-          <SearchAPI
-            woeidData={this.state.woeid}
-            searchAPILocations={this.searchAPILocations}
-          />
         </div>
       </div>
     );
