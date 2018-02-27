@@ -16,29 +16,24 @@ export class SearchAPI extends React.Component {
   };
 
   change = event => {
-    console.log("ONCHANGE selection: ", event);
-    this.setState({ id: event.value });
-  };
+   if (event == null) {
+     return this.setState({ id: 1 });
+   }        console.log('ONCHANGE selection: ', event);
+      this.setState({ id: event.value });
+    }
+
 
   render() {
-    return (
-      <div>
+    return <div>
         <form id="search-form" onSubmit={e => this.props.searchAPILocations(e)}>
           <label id="padding-test" htmlFor="APIWoeid">
-            Search Your Custom Locations
+            Search Custom Locations
           </label>
-          <VirtualizedSelect
-            name="APIWoeid"
-            id="APIWoeid"
-            options={this.props.personalLocations.map(item =>
+          <VirtualizedSelect name="APIWoeid" id="APIWoeid" options={this.props.personalLocations.map(item =>
               this.generateLocations(item)
-            )}
-            onClick={e => this.change(e)}
-            value={this.state.id}
-          />
+            )} onClick={e => this.change(e)} onChange={e => this.change(e)} value={this.state.id} />
           <input type="submit" id="search-button" value="Check Location" />
         </form>
-      </div>
-    );
+      </div>;
   }
 }

@@ -30,8 +30,12 @@ export class AddPlace extends React.Component {
   render() {
     return (
       <div>
-        <button id="add-button" className="modal-open" onClick={this.openModal}>
-          <h2> Add a Place</h2>
+        <button
+          id="add-button"
+          className="modal-open"
+          onClick={this.openModal}
+        >
+          Add a Place
         </button>
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -45,7 +49,7 @@ export class AddPlace extends React.Component {
             </button>
             <h2 id="form-title">Add Your Place</h2>
             <form id="add-form" onSubmit={this.props.addPlaces}>
-              <label htmlFor="WOE_ID">Enter  Woeid</label>
+              <label htmlFor="WOE_ID">Enter World ID (Woeid)</label>
               <input type="text" name="WOE_ID" />
               <label htmlFor="Name">Enter Name</label>
               <input type="text" name="Name" />
