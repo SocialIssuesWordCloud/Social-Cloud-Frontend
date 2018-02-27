@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from 'react';
+import { Component } from "react";
 import "./App.css";
 import randomColor from "randomcolor";
 import TagCloud from "react-tag-cloud";
 import CloudItem from "./Components/CloudItem";
 import Header from "./Components/Header";
 import SubHeader from "./Components/SubHeader";
-// import "App.css" from "./App.css";
 
 var apiURL = "https://social-cloud-database.herokuapp.com/tweets/";
 var baseURL = "https://social-cloud-database.herokuapp.com/";
@@ -15,8 +15,11 @@ class App extends Component {
     super(props);
     this.state = {
       personalLocations: [],
-      woeid: [],
-      citieswoeid: []
+      woeid:[],
+      countrywoeid:[],
+      stateswoeid:[],
+      citieswoeid: [],
+      tweets: []
     };
   }
 
@@ -35,14 +38,14 @@ class App extends Component {
     return fetch(baseURL)
       .then(response => response.json())
       .then(response => {
-        console.log("STATE Get Data:", this.state);
-        !response.personalLocations ? this.setState({
+       this.setState({
           personalLocations: response.personalLocations,
           woeid: response.woeid,
           countrywoeid: response.countrywoeid,
           stateswoeid: response.stateswoeid,
           citieswoeid: response.citieswoeid,
-        }) : null;
+        });
+        console.log("getData:", this.state);
       })
   }
 
@@ -51,33 +54,33 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         this.setState({ tweets: response.tweets[0].trends });
-        console.log("STATE Get Data:", this.state);
+        console.log("getTweetData:", this.state);
       });
   };
 
   populateCloud = item => {
-    return (
-      <CloudItem
-        style={{
-          fontSize:
-            item.tweet_volume === null
-              ? 30
-              : item.tweet_volume < 18000 ? 45 : item.tweet_volume / 1100
-        }}
-        text={item.name}
-        key={item.tweet_volume}
-        href={item.url}
-      />
-    );
-  };
+  return (
+    <CloudItem
+      style={{
+        fontSize:
+          item.tweet_volume === null
+            ? 30
+            : item.tweet_volume < 18000 ? 45 : item.tweet_volume / 1100
+      }}
+      text={item.name}
+      key={item.tweet_volume}
+      href={item.url}
+    />
+  );
+};
 
-  findWOEID = id => {
-    return this.state.woeid.find(location => {
-      return location.id === id;
-    });
-  };
+findWOEID = id => {
+  return this.state.woeid.find(location => {
+    return location.id === id;
+  });
+};
 
-  searchAPILocations = event => {
+searchAPILocations = event => {
     event.preventDefault();
     var data = new FormData(event.target);
     var location = this.findWOEID(parseInt(data.get("APIWoeid")));
@@ -86,8 +89,9 @@ class App extends Component {
     fetch(baseURL + "tweets/" + woeid)
       .then(response => response.json())
       .then(response => {
+        console.log("searchAPILocations",response)
         this.setState({
-          tweets: response
+          tweets: response.tweets[0].trends
         });
       })
       .catch(error => console.log(error));
@@ -97,7 +101,10 @@ class App extends Component {
     return (
       <div className="app-outer">
         <div className="app-inner">
-          <Header />
+          <Header
+          woeidData={this.state.woeid}
+          searchAPILocations={this.searchAPILocations}
+          />
           <TagCloud
             className="tag-cloud"
             style={{

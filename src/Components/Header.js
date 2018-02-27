@@ -72,9 +72,18 @@ class Header extends React.Component {
         </HeaderDiv>
         {this.state.SubHeader ? (
           <SearchBar>
-            <SubHeader1 />
-            <SubHeader1 />
-            <SubHeader1 />{" "}
+            <SubHeader1
+            woeidData={this.props.woeidData}
+            searchAPILocations={this.props.searchAPILocations}
+            />
+            <SubHeader1
+            woeidData={this.props.woeidData}
+            searchAPILocations={this.props.searchAPILocations}
+            />
+            <SubHeader1
+            woeidData={this.props.woeidData}
+            searchAPILocations={this.props.searchAPILocations}
+            />
           </SearchBar>
         ) : null}
       </div>

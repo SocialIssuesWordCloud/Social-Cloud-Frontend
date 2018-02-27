@@ -20,17 +20,18 @@ export class SearchAPI extends React.Component {
   };
 
   change = event => {
-    this.setState({ id: event.target.value });
-    console.log(event.target.value);
-  };
+  this.setState({id: event.target.value});
+  console.log(event.target.value);
+}
+
 
   render() {
     const options = [
-      {label: "colorado", value:1},
-      {label: "denver", value:2},
-      {label: "orlando", value:3},
-      {label: "miami", value:4}
-    ]
+  {label: "colorado", value:1},
+  {label: "denver", value:2},
+  {label: "orlando", value:3},
+  {label: "miami", value:4}
+]
     return (
       <div>
         <form id="search-form" onSubmit={this.props.searchAPILocations}>
@@ -45,7 +46,8 @@ export class SearchAPI extends React.Component {
             onMouseLeave={this.change}
             value={this.state.id}
           />
-          <input type="submit" id="submitButtons" value="Check Location" />
+            {this.props.woeidData.map(this.generateLocations)}
+          <input type="submit" id="search-button" value="Check Location" />
         </form>
       </div>
     );
