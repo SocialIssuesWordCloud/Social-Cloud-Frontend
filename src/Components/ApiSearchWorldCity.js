@@ -7,7 +7,7 @@ export class SearchAPIWorldCity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 1
+      id: ""
     };
   }
 
