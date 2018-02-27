@@ -27,22 +27,49 @@ label {
   text-align: center;
 }
 
+#about:hover {
+  font-size: 1.5rem;
+  min-width: 150px;
+  max-width: 250px;
+  margin: 1em;
+  padding: 0.5rem 0rem;
+  margin-right: 2rem;
+  overflow: hidden;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+}
+
 #search-button {
   font-size: 1rem;
   min-width: 150px;
   max-width: 250px;
-  margin: 1rem;
-  padding: 0.5rem;
+  margin: 1em;
+  padding: 0rem;
+  margin-right: 2rem;
   overflow: hidden;
-  background: #fff;
-  color: #37474f;
+  background: rgba(41, 41, 255, 0.5);
   border-radius: 5px;
-  border: 1px solid;
+  border: 1px solid white;
+  text-align: center;
+  color: white;
 }
 
 #search-button:hover {
-  background-color: blue;
-  color: white;
+  font-size: 1.5rem;
+  min-width: 150px;
+  max-width: 250px;
+  margin: 1em;
+  padding: 0.5rem 0rem;
+  margin-right: 2rem;
+  overflow: hidden;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
 }
 
 #search-button:active {
@@ -61,4 +88,131 @@ label {
 
 #crud-button {
   margin: 1rem;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Patua+One%7CRoboto');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li{
+  list-style-type: none;
+  padding-left:0.7rem;
+}
+
+.app-outer {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  padding: 0 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.app-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* max-width: 100%; */
+  width: 100vw;
+}
+
+
+
+#add-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+label{
+  margin: .5rem;
+}
+
+/* Button Styling */
+#add-button,
+#delete-button,
+.modal-open {
+    background: rgba(0, 0, 255, 0.7);
+    border-radius: 5px;
+    transition: all 0.2s;
+    width: 170px;
+    color: white;
+}
+
+.ReactModal__Content{
+   height: 600px;
+   width: 600px;
+   padding: 10px;
+   max-height: 1000px;
+   max-width: 1000px;
+}
+
+
+.sc-EHOje eBYmyq {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+a:-webkit-any-link {
+  color: inherit !important;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.tag-cloud {
+  flex: 1;
+}
+
+.tag-cloud>div {
+  transition: 1.4s;
+}
+
+.tag-item-wrapper {
+  cursor: pointer;
+}
+
+.tag-item-wrapper:hover {
+  z-index: 100;
+}
+
+.tag-item-wrapper:hover .tag-item-tooltip {
+  display: block;
+}
+
+.tag-item-tooltip {
+  background: #c01916;
+  color: white;
+  margin-top: 5px;
+  z-index: 100;
+  display: none;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1;
+  position: absolute;
+  min-width: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }

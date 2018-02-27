@@ -9,7 +9,7 @@ const HeaderDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 170px;
   width: 25%;
   color: black;
   padding: 0 1rem;
@@ -23,14 +23,12 @@ const Nav = styled.div`
 
 class SubHeader1 extends React.Component {
   render() {
-    return (
-      <HeaderDiv>
-        <SearchAPI
-        woeidData={this.props.woeidData}
-        searchAPILocations={this.props.searchAPILocations}
-        />
-      </HeaderDiv>
-    );
+    return <HeaderDiv>
+        <SearchAPI woeidData={this.props.woeidData} searchAPILocations={this.props.searchAPILocations} /> 
+        <SearchAPI woeidData={this.props.woeidData} searchAPILocations={this.props.searchAPILocations} /> 
+        <SearchAPI woeidData={this.props.woeidData} searchAPILocations={this.props.searchAPILocations} /> 
+        <SearchAPI woeidData={this.props.woeidData} searchAPILocations={this.props.searchAPILocations} />
+      </HeaderDiv>;
   }
 }
 
