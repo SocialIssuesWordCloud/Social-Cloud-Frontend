@@ -8,7 +8,7 @@ text:hover {
 }
 
 label {
-  color: white;
+  color: black;
   font-weight: bolder;
   font-size: 1.5rem;
 }
@@ -50,4 +50,15 @@ label {
   color: white;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+#modals {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#crud-button {
+  margin: 1rem;
 }
