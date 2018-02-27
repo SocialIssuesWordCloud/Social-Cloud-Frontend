@@ -24,6 +24,16 @@ class App extends Component {
       citieswoeid: [],
       tweets: []
     };
+    const getDataOnTimer = () => {
+      setTimeout(()=> {
+        console.log('GETIN STUF')
+        
+        this.getData().then(()=> {
+          getDataOnTimer();
+        })
+      }, 300000);
+    }
+    getDataOnTimer();
   }
 
   componentDidMount() {
@@ -82,6 +92,8 @@ class App extends Component {
       return location.id === id;
     });
   };
+
+  
 
   searchAPILocations = event => {
     event.preventDefault();
