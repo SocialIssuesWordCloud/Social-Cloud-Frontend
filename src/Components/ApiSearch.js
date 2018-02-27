@@ -12,11 +12,7 @@ export class SearchAPI extends React.Component {
   }
 
   generateLocations = location => {
-    return (
-      <option key={location.id} id={location.id} value={location.id}>
-        {location.Name}
-      </option>
-    );
+    return {label: location.Name, value:location.id}
   };
 
   change = event => {
@@ -27,12 +23,6 @@ export class SearchAPI extends React.Component {
 
 
   render() {
-    const options = [
-  {label: "colorado", value:1},
-  {label: "denver", value:2},
-  {label: "orlando", value:3},
-  {label: "miami", value:4}
-]
     return (
       <div>
         <form id="search-form" onSubmit={this.props.searchAPILocations}>
@@ -41,14 +31,14 @@ export class SearchAPI extends React.Component {
           <VirtualizedSelect
             name="APIWoeid"
             id="APIWoeid"
-            options={options}
+            options={this.props.woeidData.map(item => this.generateLocations(item))}
             onChange={this.change}
             onClick={this.change}
             onKeyUp={this.change}
             onMouseLeave={this.change}
             value={this.state.id}
           />
-            {this.props.woeidData.map(this.generateLocations)}
+          {console.log('APIsearch props.woeidData: ',this.props.woeidData)}
           <input type="submit" id="search-button" value="Check Location" />
         </form>
       </div>

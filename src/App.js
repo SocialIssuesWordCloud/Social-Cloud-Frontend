@@ -30,7 +30,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-<<<<<<< HEAD
     fetch(baseURL)
       .then(response => response.json())
       .then(response => {
@@ -41,10 +40,9 @@ class App extends Component {
         }) : null;
       })
       .then(() => this.getData())
-=======
-    this.getData()
+
+      this.getData()
       .then(() => this.getTweetData())
->>>>>>> 98624d910fd67a6afae06ec68edcd7d6447c2720
       .then(() => {
         setInterval(() => {
           this.forceUpdate();
