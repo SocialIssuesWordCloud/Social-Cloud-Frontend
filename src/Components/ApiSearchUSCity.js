@@ -7,7 +7,7 @@ export class SearchAPIUSCity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: ""
+      id: 1
     };
   }
 

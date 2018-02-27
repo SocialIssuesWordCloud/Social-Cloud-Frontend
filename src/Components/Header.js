@@ -72,7 +72,6 @@ class Header extends React.Component {
           </SearchBar>
         ) : null}
       </div>
-    );
   }
 }
 
