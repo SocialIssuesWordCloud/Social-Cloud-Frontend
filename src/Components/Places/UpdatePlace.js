@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import FaBeer from "react-icons/lib/fa/search";
 
 export class UpdatePlace extends React.Component {
   constructor(props) {
@@ -65,6 +66,13 @@ export class UpdatePlace extends React.Component {
           <option value="Town">Town</option>
           <option value="Country">Country</option>
         </select>
+        <div id="woeid-button">
+          <a href="http://woeid.rosselliot.co.nz/" target="_blank">
+            <h3>
+              Find our WOEID <FaBeer />
+            </h3>
+          </a>
+        </div>
         <input type="submit" id="add-button" value="Submit Place" />
         </form>
         </div>

@@ -1,11 +1,12 @@
 import React from "react";
 import Modal from "react-modal";
+import FaBeer from "react-icons/lib/fa/search";
 
 export class AddPlace extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: false,
+      modalIsOpen: false
     };
     Modal.setAppElement(document.body);
   }
@@ -42,26 +43,33 @@ export class AddPlace extends React.Component {
           onRequestClose={this.closeModal}
           contentLabel="AddModal"
         >
-        <div id="modal">
-        <button onClick={this.closeModal} id="close-button">
-          Close
-        </button>
-          <h2 id="form-title">Add a Place </h2>
-          <form id="add-form" onSubmit={this.props.addPlaces}>
-            <label htmlFor="WOE_ID">Add Your Place</label>
-            <input type="text" name="WOE_ID" />
-            <label htmlFor="Name">Add Name</label>
-            <input type="text" name="Name" />
-            <label htmlFor="PlaceType">Add Place Type</label>
-            <select name="PlaceType">
-              <option value="" disabled selected>
-                Select something...
-              </option>
-              <option value="Town">Town</option>
-              <option value="Country">Country</option>
-            </select>
-            <input type="submit" id="add-button" value="Submit Place" />
-          </form>
+          <div id="modal">
+            <button onClick={this.closeModal} id="close-button">
+              Close
+            </button>
+            <h2 id="form-title">Add a Place </h2>
+            <form id="add-form" onSubmit={this.props.addPlaces}>
+              <label htmlFor="WOE_ID">Add Your Place</label>
+              <input type="text" name="WOE_ID" />
+              <label htmlFor="Name">Add Name</label>
+              <input type="text" name="Name" />
+              <label htmlFor="PlaceType">Add Place Type</label>
+              <select name="PlaceType">
+                <option value="" disabled selected>
+                  Select something...
+                </option>
+                <option value="Town">Town</option>
+                <option value="Country">Country</option>
+              </select>
+              <div id="woeid-button">
+                <a href="http://woeid.rosselliot.co.nz/" target="_blank">
+                  <h3>
+                    Find our WOEID <FaBeer />
+                  </h3>
+                </a>
+              </div>
+              <input type="submit" id="add-button" value="Submit Place" />
+            </form>
           </div>
         </Modal>
       </div>

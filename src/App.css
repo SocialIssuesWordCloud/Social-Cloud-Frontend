@@ -170,6 +170,9 @@ label {
   color: white;
 }
 
+h1{
+  margin-left: 16rem;
+}
 #search-button:hover {
   font-size: .5rem;
   min-width: 150px;
