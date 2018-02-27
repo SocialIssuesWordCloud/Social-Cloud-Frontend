@@ -8,17 +8,14 @@ import SubHeader1 from "./SubHeader";
 const top = styled.div`
   display: flex;
   flex-direction: column;
-  height: 140px;
 `;
 const HeaderDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 90px;
   color: white;
   background-color: rgba(0, 0, 255, 0.7);
-  padding: 1.2rem;
 `;
 const Nav = styled.div`
   display: flex;

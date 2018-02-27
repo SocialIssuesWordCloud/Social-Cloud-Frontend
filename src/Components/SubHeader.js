@@ -8,14 +8,13 @@ import { SearchAPIWorldCity } from "./ApiSearchWorldCity";
 import { SearchAPICountry } from "./ApiSearchCountry";
 
 const HeaderDiv = styled.div`
-  display: hidden;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 170px;
-  width: 25%;
+  height: 100px;
   color: black;
-  padding: 0 1rem;
+  padding-right: 20px;
 `;
 const Nav = styled.div`
   display: flex;
