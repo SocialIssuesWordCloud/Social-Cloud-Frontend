@@ -12,7 +12,7 @@ const HeaderDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 170px;
   width: 25%;
   color: black;
   padding: 0 1rem;

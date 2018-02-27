@@ -5,6 +5,9 @@ import randomColor from "randomcolor";
 import TagCloud from "react-tag-cloud";
 import CloudItem from "./Components/CloudItem";
 import Header from "./Components/Header";
+import { SearchAPI } from "./Components/ApiSearch";
+import Select from "react-select";
+import "react-select/dist/react-select.css";
 import SubHeader from "./Components/SubHeader";
 import { AddPlace } from "./Components/Places/AddPlace";
 import { UpdatePlace } from "./Components/Places/UpdatePlace";
@@ -37,7 +40,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getData()
+    fetch(baseURL)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        response.personalLocation ? this.setState({
+          personalLocations: response.personalLocations,
+          woeid: response.woeid
+        }) : null;
+      })
+      .then(() => this.getData())
+
+      this.getData()
       .then(() => this.getTweetData())
       .then(() => {
         setInterval(() => {
@@ -71,20 +85,13 @@ class App extends Component {
       });
   };
 
-  populateCloud = item => {
-    return (
-      <CloudItem
-        style={{
-          fontSize:
-            item.tweet_volume === null
-              ? 30
-              : item.tweet_volume < 18000 ? 45 : item.tweet_volume / 1100
-        }}
-        text={item.name}
-        key={item.tweet_volume}
-        href={item.url}
-      />
-    );
+  populateCloud = (item) => {
+    return <CloudItem style={
+      {fontSize: 
+      item.tweet_volume === null ? 30: 
+      item.tweet_volume < 18000 ? 45 : 
+      item.tweet_volume / 1100 
+      }} text={item.name} key={item.tweet_volume} href={item.url} />;
   };
 
   findWOEID = id => {
