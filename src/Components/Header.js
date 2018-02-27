@@ -63,10 +63,19 @@ class Header extends React.Component {
             </button>
           </Nav>
         </HeaderDiv>
-        {this.state.SubHeader ? <SearchBar>
-            <SubHeader1 woeidData={this.props.woeidData} searchAPILocations={this.props.searchAPILocations} />
-           </SearchBar> : null}
-      </div>;
+        {this.state.SubHeader ? (
+          <SearchBar>
+            <SubHeader1
+            citieswoeid={this.props.citieswoeid}
+            countrywoeid={this.props.countrywoeid}
+            worldcitieswoeid={this.props.worldcitieswoeid}
+            personalLocations={this.props.personalLocations}
+            searchAPILocations={this.props.searchAPILocations}
+            />
+          </SearchBar>
+        ) : null}
+      </div>
+    );
   }
 }
 

@@ -23,14 +23,14 @@ class App extends Component {
       personalLocations: [],
       woeid: [],
       countrywoeid: [],
-      stateswoeid: [],
+      worldcitieswoeid: [],
       citieswoeid: [],
       tweets: []
     };
     const getDataOnTimer = () => {
       setTimeout(()=> {
         console.log('GETIN STUF')
-        
+
         this.getData().then(()=> {
           getDataOnTimer();
         })
@@ -69,7 +69,7 @@ class App extends Component {
           personalLocations: response.personalLocations,
           woeid: response.woeid,
           countrywoeid: response.countrywoeid,
-          stateswoeid: response.stateswoeid,
+          worldcitieswoeid: response.worldcitieswoeid,
           citieswoeid: response.citieswoeid
         });
         console.log("getData:", this.state);
@@ -100,7 +100,7 @@ class App extends Component {
     });
   };
 
-  
+
 
   searchAPILocations = event => {
     event.preventDefault();
@@ -215,7 +215,10 @@ class App extends Component {
       <div className="app-outer">
         <div className="app-inner">
           <Header
-            woeidData={this.state.woeid}
+            citieswoeid={this.state.citieswoeid}
+            countrywoeid={this.state.countrywoeid}
+            worldcitieswoeid={this.state.worldcitieswoeid}
+            personalLocations={this.state.personalLocations}
             searchAPILocations={this.searchAPILocations}
           />
           <TagCloud

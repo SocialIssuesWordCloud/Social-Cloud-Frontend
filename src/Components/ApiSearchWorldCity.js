@@ -3,7 +3,7 @@ import Select from "react-select";
 import "react-select/dist/react-select.css";
 import VirtualizedSelect from "react-virtualized-select";
 
-export class SearchAPI extends React.Component {
+export class SearchAPIWorldCity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +29,7 @@ export class SearchAPI extends React.Component {
           <VirtualizedSelect
             name="APIWoeid"
             id="APIWoeid"
-            options={this.props.personalLocations.map(item => this.generateLocations(item))}
+            options={this.props.worldcitieswoeid.map(item => this.generateLocations(item))}
             onChange={(e) => this.change(e)}
             onClick={(e) => this.change(e)}
             onKeyUp={(e) => this.change(e)}
