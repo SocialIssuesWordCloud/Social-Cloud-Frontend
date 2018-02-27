@@ -40,10 +40,14 @@ label {
   border: 1px solid;
 }
 
-#search-button:hover {background-color: #3e8e41}
+#search-button:hover {
+  background-color: blue;
+  color: white;
+}
 
 #search-button:active {
-  background-color: #3e8e41;
+  background-color: blue;
+  color: white;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
