@@ -51,7 +51,7 @@ class Header extends React.Component {
           <h1>Social Cloud</h1>
           <Nav>
             <li id="about">
-              <a href="https://group-about.firebaseapp.com/">About</a>
+              <a href="https://siwc-project.firebaseapp.com/">About</a>
             </li>
             <button id="search-button" onClick={this.toggleSubHeader}>
               <h3>
