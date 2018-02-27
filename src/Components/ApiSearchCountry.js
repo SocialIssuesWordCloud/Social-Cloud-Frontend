@@ -7,7 +7,7 @@ export class SearchAPICountry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 1
+      id: ""
     };
   }
 
@@ -30,10 +30,7 @@ export class SearchAPICountry extends React.Component {
             name="APIWoeid"
             id="APIWoeid"
             options={this.props.countrywoeid.map(item => this.generateLocations(item))}
-            onChange={(e) => this.change(e)}
             onClick={(e) => this.change(e)}
-            onKeyUp={(e) => this.change(e)}
-            onMouseLeave={(e) => this.change(e)}
             value={this.state.id}
           />
           <input type="submit" id="search-button" value="Check Location" />

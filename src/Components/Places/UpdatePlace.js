@@ -49,16 +49,16 @@ export class UpdatePlace extends React.Component {
       </button>
         <h2 id="form-title">Update a Place</h2>
         <form id="update-form" onSubmit={this.props.updatePlace}>
-        <label htmlFor="WOE_ID">Update Your Place</label>
+        <label htmlFor="WOE_ID">Update Woeid</label>
         <select name="WOE_ID" id="WOE_ID">
           <option value="" disabled selected>
             Select a place...
           </option>
           {this.props.personalLocations.map(this.generateLocations)}
         </select>
-        <label htmlFor="Name">Add Name</label>
+        <label htmlFor="Name">Update Name</label>
         <input type="text" name="Name" />
-        <label htmlFor="PlaceType">Add Place Type</label>
+        <label htmlFor="PlaceType">Update Place Type</label>
         <select name="PlaceType">
           <option value="" disabled selected>
             Select something...
