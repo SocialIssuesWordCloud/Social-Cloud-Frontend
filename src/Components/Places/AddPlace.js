@@ -35,7 +35,7 @@ export class AddPlace extends React.Component {
           className="modal-open"
           onClick={this.openModal}
         >
-          + Personal Place
+          Add a Place
         </button>
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -47,13 +47,13 @@ export class AddPlace extends React.Component {
             <button onClick={this.closeModal} id="close-button">
               Close
             </button>
-            <h2 id="form-title">Add a Place </h2>
+            <h2 id="form-title">Add Your Place</h2>
             <form id="add-form" onSubmit={this.props.addPlaces}>
-              <label htmlFor="WOE_ID">Add Your Place</label>
+              <label htmlFor="WOE_ID">Enter World ID (Woeid)</label>
               <input type="text" name="WOE_ID" />
-              <label htmlFor="Name">Add Name</label>
+              <label htmlFor="Name">Enter Name</label>
               <input type="text" name="Name" />
-              <label htmlFor="PlaceType">Add Place Type</label>
+              <label htmlFor="PlaceType">Enter Place Type</label>
               <select name="PlaceType">
                 <option value="" disabled selected>
                   Select something...

@@ -32,7 +32,7 @@ export class SearchAPIWorldCity extends React.Component {
           </label>
           <VirtualizedSelect name="APIWoeid" id="APIWoeid" options={this.props.worldcitieswoeid.map(item =>
               this.generateLocations(item)
-            )} onChange={e => this.change(e)} onClick={e => this.change(e)} onKeyUp={e => this.change(e)} onMouseLeave={e => this.change(e)} value={this.state.id} />
+            )} onClick={e => this.change(e)} onChange={e => this.change(e)} value={this.state.id} />
           <input type="submit" id="search-button" value="Check Location" />
         </form>
       </div>;
