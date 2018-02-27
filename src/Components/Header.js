@@ -72,7 +72,7 @@ class Header extends React.Component {
           </SearchBar>
         ) : null}
       </div>
-  };
+  }
 }
 
 export default Header;
