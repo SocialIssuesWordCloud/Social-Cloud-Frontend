@@ -7,27 +7,43 @@ text:hover {
   font-size: 250% !important;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+label {
   color: white;
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
-.App-title {
-  font-size: 1.5em;
+#about {
+  font-size: 1.5rem;
+  min-width: 150px;
+  max-width: 250px;
+  margin: 1em;
+  padding: 0.5rem 0rem;
+  margin-right: 2rem;
+  overflow: hidden;
+  background: rgba(41, 41, 255, 0.5);
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
 }
 
-.App-intro {
-  font-size: large;
+#search-button {
+  font-size: 1rem;
+  min-width: 150px;
+  max-width: 250px;
+  margin: 1rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  background: #fff;
+  color: #37474f;
+  border-radius: 5px;
+  border: 1px solid;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#search-button:hover {background-color: #3e8e41}
+
+#search-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
