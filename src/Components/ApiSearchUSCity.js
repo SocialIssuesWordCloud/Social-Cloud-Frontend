@@ -16,29 +16,25 @@ export class SearchAPIUSCity extends React.Component {
   };
 
   change = event => {
+           if (event == null) {
+            return this.setState({ id: 1 });
+           } 
   console.log('ONCHANGE selection: ', event);
   this.setState({ id: event.value });
 }
 
 
   render() {
-    return (
-      <div>
-        <form id="search-form" onSubmit={(e)=> this.props.searchAPILocations(e)}>
-          <label htmlFor="APIWoeid">Find your location:</label>
-          <VirtualizedSelect
-            name="APIWoeid"
-            id="APIWoeid"
-            options={this.props.citieswoeid.map(item => this.generateLocations(item))}
-            onChange={(e) => this.change(e)}
-            onClick={(e) => this.change(e)}
-            onKeyUp={(e) => this.change(e)}
-            onMouseLeave={(e) => this.change(e)}
-            value={this.state.id}
-          />
+    return <div>
+        <form id="search-form" onSubmit={e => this.props.searchAPILocations(e)}>
+          <label id="padding-test" htmlFor="APIWoeid">
+            Search by US City
+          </label>
+          <VirtualizedSelect name="APIWoeid" id="APIWoeid" options={this.props.citieswoeid.map(item =>
+              this.generateLocations(item)
+            )} onChange={e => this.change(e)} onClick={e => this.change(e)} onKeyUp={e => this.change(e)} onMouseLeave={e => this.change(e)} value={this.state.id} />
           <input type="submit" id="search-button" value="Check Location" />
         </form>
-      </div>
-    );
+      </div>;
   }
 }

@@ -34,7 +34,7 @@ export class UpdatePlace extends React.Component {
         className="modal-open"
         onClick={this.openModal}
       >
-      <h2>Update a Place</h2>
+      Update a Place
       </button>
       <Modal
         isOpen={this.state.modalIsOpen}

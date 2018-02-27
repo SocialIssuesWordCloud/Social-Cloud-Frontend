@@ -50,28 +50,18 @@ class Header extends React.Component {
           <img src={cloud} alt="social-cloud" height="1px" />
           <h1>Social Cloud</h1>
           <Nav>
-            <li id="about">
-              <a href="https://group-about.firebaseapp.com/">About</a>
-            </li>
+            <button id="search-button">
+              <a href="https://siwc-project.firebaseapp.com">About</a>
+            </button>
             <button id="search-button" onClick={this.toggleSubHeader}>
-              <h3>
-                Search <FaBeer />
-              </h3>
+              Search <FaBeer />
             </button>
           </Nav>
         </HeaderDiv>
-        {this.state.SubHeader ? (
-          <SearchBar>
-            <SubHeader1
-            citieswoeid={this.props.citieswoeid}
-            countrywoeid={this.props.countrywoeid}
-            worldcitieswoeid={this.props.worldcitieswoeid}
-            personalLocations={this.props.personalLocations}
-            searchAPILocations={this.props.searchAPILocations}
-            />
-          </SearchBar>
-        ) : null}
-      </div>
+        {this.state.SubHeader ? <SearchBar>
+            <SubHeader1 citieswoeid={this.props.citieswoeid} countrywoeid={this.props.countrywoeid} worldcitieswoeid={this.props.worldcitieswoeid} personalLocations={this.props.personalLocations} searchAPILocations={this.props.searchAPILocations} />
+          </SearchBar> : null}
+      </div>;
   }
 }
 

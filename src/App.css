@@ -44,8 +44,6 @@ li{
   width: 100vw;
 }
 
-
-
 #add-form {
   display: flex;
   flex-direction: column;
@@ -64,29 +62,22 @@ label{
 .modal-open {
     background: rgba(0, 0, 255, 0.7);
     border-radius: 5px;
-    padding: 5px;
     transition: all 0.2s;
     max-width: 170px;
+    max-height: 80px !important;
     color: white;
     cursor: pointer;
+    height: 50px !important;
+
 }
 
-/* #add-button,
-.modal-open {
-    background: rgba(0, 0, 255, 0.7);
-    border-radius: 5px;
-    padding: 10px;
-    transition: all 0.2s;
-    max-width: 170px;
-    color: white;
-        cursor: pointer;
-} */
-
+#delete-button:hover,
+#update-button:hover,
 #add-button:hover {
   color:blue;
   background-color: white;
   border: 1px solid blue;
-      cursor: pointer;
+  cursor: pointer;
 }
 
 
@@ -140,9 +131,9 @@ label {
   font-size: .5rem;
   min-width: 150px;
   max-width: 250px;
-  margin: 1em;
-  padding: 0.5rem 0rem;
-  margin-right: 2rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 47px !important;
   overflow: hidden;
   background: rgba(41, 41, 255, 0.5);
   border-radius: 5px;
@@ -154,9 +145,9 @@ label {
   font-size: .5rem;
   min-width: 150px;
   max-width: 250px;
-  margin: 1em;
-  padding: 0.5rem 0rem;
-  margin-right: 2rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 47px !important;
   overflow: hidden;
   background: white;
   color: black;
@@ -170,7 +161,7 @@ label {
   min-width: 150px;
   max-width: 250px;
   padding: 0.5rem 0rem;
-  margin-right: 2rem;
+  margin: .2rem .4rem 0 .2rem;
   overflow: hidden;
   background: rgba(41, 41, 255, 0.5);
   border-radius: 5px;
@@ -184,14 +175,18 @@ label {
   min-width: 150px;
   max-width: 250px;
   padding: 0.5rem 0rem;
-  margin-right: 2rem;
+  margin: .2rem .4rem 0 .2rem;
   overflow: hidden;
   background: white;
   color: black;
   border-radius: 5px;
   border: 1px solid;
   text-align: center;
-    margin-top: 10px;
+}
+
+.qUawM{
+  width: 100%;
+  margin: 15px;
 }
 
 #search-button:active {
@@ -215,7 +210,11 @@ label {
 
 
 #search-form {
-  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 
 
@@ -241,4 +240,8 @@ label {
   padding-right: 20px;
   font-size: .8rem;
   color: white;
+}
+
+button{
+  max-height: 70px !important;
 }

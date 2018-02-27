@@ -40,7 +40,7 @@ export class DeletePlace extends React.Component {
         className="modal-open"
         onClick={this.openModal}
       >
-      <h2>Remove a Place</h2>
+      Remove a Place
       </button>
       <Modal
         isOpen={this.state.modalIsOpen}
