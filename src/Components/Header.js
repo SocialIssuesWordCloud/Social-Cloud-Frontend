@@ -51,7 +51,7 @@ class Header extends React.Component {
           <h1>Social Cloud</h1>
           <Nav>
             <li id="about">
-              <a href="https://group-about.firebaseapp.com/">About</a>
+              <a href="https://siwc-project.firebaseapp.com/">About</a>
             </li>
             <button id="search-button" onClick={this.toggleSubHeader}>
               <h3>
@@ -60,19 +60,10 @@ class Header extends React.Component {
             </button>
           </Nav>
         </HeaderDiv>
-        {this.state.SubHeader ? (
-          <SearchBar>
-            <SubHeader1
-            citieswoeid={this.props.citieswoeid}
-            countrywoeid={this.props.countrywoeid}
-            worldcitieswoeid={this.props.worldcitieswoeid}
-            personalLocations={this.props.personalLocations}
-            searchAPILocations={this.props.searchAPILocations}
-            />
-          </SearchBar>
-        ) : null}
-      </div>
-    );
+        {this.state.SubHeader ? <SearchBar>
+            <SubHeader1 citieswoeid={this.props.citieswoeid} countrywoeid={this.props.countrywoeid} worldcitieswoeid={this.props.worldcitieswoeid} personalLocations={this.props.personalLocations} searchAPILocations={this.props.searchAPILocations} />
+          </SearchBar> : null}
+      </div>;
   }
 }
 
