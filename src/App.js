@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
+import { Component } from "react";
+import "./App.css";
 import randomColor from "randomcolor";
 import TagCloud from "react-tag-cloud";
 import CloudItem from "./Components/CloudItem";
@@ -6,7 +8,10 @@ import Header from "./Components/Header";
 import { SearchAPI } from "./Components/ApiSearch";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
-// import "App.css" from "./App.css";
+import SubHeader from "./Components/SubHeader";
+import { AddPlace } from "./Components/Places/AddPlace";
+import { UpdatePlace } from "./Components/Places/UpdatePlace";
+import { DeletePlace } from "./Components/Places/DeletePlace";
 
 var apiURL = "https://social-cloud-database.herokuapp.com/tweets/";
 var baseURL = "https://social-cloud-database.herokuapp.com/";
@@ -16,11 +21,16 @@ class App extends Component {
     super(props);
     this.state = {
       personalLocations: [],
-      woeid: []
+      woeid: [],
+      countrywoeid: [],
+      stateswoeid: [],
+      citieswoeid: [],
+      tweets: []
     };
   }
 
   componentDidMount() {
+<<<<<<< HEAD
     fetch(baseURL)
       .then(response => response.json())
       .then(response => {
@@ -31,6 +41,10 @@ class App extends Component {
         }) : null;
       })
       .then(() => this.getData())
+=======
+    this.getData()
+      .then(() => this.getTweetData())
+>>>>>>> 98624d910fd67a6afae06ec68edcd7d6447c2720
       .then(() => {
         setInterval(() => {
           this.forceUpdate();
@@ -40,15 +54,28 @@ class App extends Component {
   }
 
   getData = () => {
+    return fetch(baseURL)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          personalLocations: response.personalLocations,
+          woeid: response.woeid,
+          countrywoeid: response.countrywoeid,
+          stateswoeid: response.stateswoeid,
+          citieswoeid: response.citieswoeid
+        });
+        console.log("getData:", this.state);
+      });
+  };
+
+  getTweetData = () => {
     return fetch(apiURL)
       .then(response => response.json())
       .then(response => {
         this.setState({ tweets: response.tweets[0].trends });
-        console.log("STATE Get Data:",this.state);
+        console.log("getTweetData:", this.state);
       });
   };
-  
-  
 
   populateCloud = (item) => {
     return <CloudItem style={
@@ -69,32 +96,157 @@ class App extends Component {
     event.preventDefault();
     var data = new FormData(event.target);
     var location = this.findWOEID(parseInt(data.get("APIWoeid")));
-    var woeid = location.WOE_ID
+    var woeid = location.WOE_ID;
     console.log(woeid);
     fetch(baseURL + "tweets/" + woeid)
       .then(response => response.json())
       .then(response => {
+        console.log("searchAPILocations", response);
         this.setState({
-          tweets: response
+          tweets: response.tweets[0].trends
         });
       })
       .catch(error => console.log(error));
   };
-  
+
+  getNewPlace = event => {
+    event.preventDefault();
+    var data = new FormData(event.target);
+    return {
+      WOE_ID: data.get("WOE_ID"),
+      ISO: "US",
+      Name: data.get("Name"),
+      Language: "ENG",
+      PlaceType: data.get("PlaceType"),
+      Parent_ID: 1
+    };
+  };
+
+  addPlaces = event => {
+    event.preventDefault();
+
+    fetch(baseURL + "personalLocations", {
+      method: "post",
+      body: JSON.stringify(this.getNewPlace(event)),
+      headers: new Headers({
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      })
+    })
+      .then(response => {
+        this.componentDidMount();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  findPlaceById = id => {
+    return this.state.personalLocations.find(place => {
+      return place.id === id;
+    });
+  };
+
+  getPlaceUpdate = event => {
+    event.preventDefault();
+    var data = new FormData(event.target);
+    var place = this.findPlaceById(parseInt(data.get("WOE_ID")));
+    var WOE_ID = place.WOE_ID;
+    return {
+      WOE_ID: data.get("WOE_ID"),
+      ISO: "US",
+      Name: data.get("Name"),
+      Language: "ENG",
+      PlaceType: data.get("PlaceType"),
+      Parent_ID: 1
+    };
+  };
+
+  updatePlace = event => {
+    event.preventDefault();
+    var data = new FormData(event.target);
+    var id = parseInt(data.get("WOE_ID"));
+    const payload = this.getPlaceUpdate(event);
+
+    return fetch(baseURL + "personalLocations/" + id, {
+      method: "put",
+      body: JSON.stringify(payload),
+      headers: new Headers({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      })
+    })
+      .then(() => this.componentDidMount())
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  deletePlace = event => {
+    event.preventDefault();
+    var data = new FormData(event.target);
+    var id = parseInt(data.get("WOE_ID"));
+
+    return fetch(baseURL + "personalLocations/" + id, {
+      method: "delete",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      })
+    })
+      .then(() => this.componentDidMount())
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   render() {
-    return <div className="app-outer">
+    return (
+      <div className="app-outer">
         <div className="app-inner">
-          <Header />
-          <TagCloud className="tag-cloud" style={{ fontFamily: 'sans-serif', color: () => randomColor(
-                  {
-                    hue: 'blue'
-                  }
-                ), padding: 5 }}>
-            {this.state.tweets ? this.state.tweets.map(item => this.populateCloud(item)) : null}
+          <Header
+            woeidData={this.state.woeid}
+            searchAPILocations={this.searchAPILocations}
+          />
+          <TagCloud
+            className="tag-cloud"
+            style={{
+              fontFamily: "sans-serif",
+              color: () =>
+                randomColor({
+                  hue: "blue"
+                }),
+              padding: 5
+            }}
+          >
+            {this.state.tweets
+              ? this.state.tweets.map(item => this.populateCloud(item))
+              : null}
           </TagCloud>
-          <SearchAPI woeidData={this.state.woeid} searchAPILocations={this.searchAPILocations} />
         </div>
-      </div>;
+        <div id="modals">
+          <div id="crud-button">
+            <AddPlace
+              personalLocations={this.state.personalLocations}
+              addPlaces={this.addPlaces}
+            />
+          </div>
+          <div id="crud-button">
+            <UpdatePlace
+              personalLocations={this.state.personalLocations}
+              updatePlace={this.updatePlace}
+            />
+          </div>
+
+          <div id="crud-button">
+            <DeletePlace
+              personalLocations={this.state.personalLocations}
+              deletePlace={this.deletePlace}
+            />
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
