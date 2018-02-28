@@ -2,7 +2,9 @@ import React from 'react';
 
 const CloudItem = props => (
   <div {...props} className="tag-item-wrapper">
-      <a href={props.href}>{props.text}</a>
+    <a target="_blank" href={props.href}>
+      {props.text}
+    </a>
   </div>
 );
 

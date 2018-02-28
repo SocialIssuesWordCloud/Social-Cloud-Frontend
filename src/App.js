@@ -29,8 +29,6 @@ class App extends Component {
     };
     const getDataOnTimer = () => {
       setTimeout(() => {
-        console.log('GETIN STUF');
-
         this.getData().then(() => {
           getDataOnTimer();
         });
@@ -93,6 +91,7 @@ class App extends Component {
         text={item.name}
         key={item.tweet_volume}
         href={item.url}
+        target="_blank"
       />
     );
   };
@@ -237,6 +236,7 @@ class App extends Component {
             searchAPIPersonalLocations={this.searchAPIPersonalLocations}
           />
           <TagCloud
+            target="_blank"
             className="tag-cloud"
             style={{ fontFamily: 'sans-serif', color: () => randomColor({ hue: 'blue' }), padding: 5 }}
           >
@@ -250,11 +250,9 @@ class App extends Component {
           <div id="crud-button">
             <UpdatePlace personalLocations={this.state.personalLocations} updatePlace={this.updatePlace} />
           </div>
-
           <div id="crud-button">
             <DeletePlace personalLocations={this.state.personalLocations} deletePlace={this.deletePlace} />
           </div>
-
           <div id="crud-button" />
         </div>
       </div>
