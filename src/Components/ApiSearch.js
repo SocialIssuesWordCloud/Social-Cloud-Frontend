@@ -24,7 +24,7 @@ export class SearchAPI extends React.Component {
 
   render() {
     return <div>
-    <form id="search-form" onSubmit={(e) => this.props.searchAPILocations(e, this.state.Name)}>
+    <form id="search-form" onSubmit={(e) => this.props.searchAPIPersonalLocations(e, this.state.Name)}>
     <label id="padding-test" htmlFor="APIWoeid">
             Search your Locations:
           </label>

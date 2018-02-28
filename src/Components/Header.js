@@ -59,7 +59,7 @@ class Header extends React.Component {
           </Nav>
         </HeaderDiv>
         {this.state.SubHeader ? <SearchBar>
-            <SubHeader1 citieswoeid={this.props.citieswoeid} countrywoeid={this.props.countrywoeid} worldcitieswoeid={this.props.worldcitieswoeid} personalLocations={this.props.personalLocations} searchAPILocations={this.props.searchAPILocations} />
+            <SubHeader1 citieswoeid={this.props.citieswoeid} countrywoeid={this.props.countrywoeid} worldcitieswoeid={this.props.worldcitieswoeid} personalLocations={this.props.personalLocations} searchAPILocations={this.props.searchAPILocations} searchAPIPersonalLocations={this.props.searchAPIPersonalLocations}/>
           </SearchBar> : null}
       </div>;
   }

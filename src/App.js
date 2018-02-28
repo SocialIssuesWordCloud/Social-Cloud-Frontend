@@ -100,11 +100,29 @@ class App extends Component {
     });
   };
 
-
-
   searchAPILocations = (event, name) => {
     event.preventDefault();
     var location = this.findWOEID(name);
+    var woeid = location.WOE_ID;
+    fetch(baseURL + "tweets/" + woeid)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          tweets: response.tweets[0].trends
+        });
+      })
+      .catch(error => console.log(error));
+  };
+
+  findPersonalWOEID = search => {
+    return this.state.personalLocations.find(name => {
+      return name.Name == search;
+    });
+  };
+
+  searchAPIPersonalLocations = (event, name) => {
+    event.preventDefault();
+    var location = this.findPersonalWOEID(name);
     var woeid = location.WOE_ID;
     fetch(baseURL + "tweets/" + woeid)
       .then(response => response.json())
@@ -217,6 +235,7 @@ class App extends Component {
             worldcitieswoeid={this.state.worldcitieswoeid}
             personalLocations={this.state.personalLocations}
             searchAPILocations={this.searchAPILocations}
+            searchAPIPersonalLocations={this.searchAPIPersonalLocations}
           />
           <TagCloud
             className="tag-cloud"

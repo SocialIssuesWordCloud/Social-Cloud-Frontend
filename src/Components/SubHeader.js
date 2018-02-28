@@ -41,7 +41,7 @@ class SubHeader1 extends React.Component {
         />
         <SearchAPI
           personalLocations={this.props.personalLocations}
-          searchAPILocations={this.props.searchAPILocations}
+          searchAPIPersonalLocations={this.props.searchAPIPersonalLocations}
         />
       </HeaderDiv>
     );
