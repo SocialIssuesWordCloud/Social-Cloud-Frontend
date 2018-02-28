@@ -60,7 +60,7 @@ label{
 #update-button,
 #add-button,
 .modal-open {
-    background: rgba(0, 0, 255, 0.7);
+    background: #4682b4;
     font-size: 1rem;
     border-radius: 5px;
     transition: all 0.2s;
@@ -137,7 +137,7 @@ label {
   margin-bottom: 5px;
   height: 47px !important;
   overflow: hidden;
-  background: rgba(41, 41, 255, 0.5);
+  background: #4682b4;
   border-radius: 5px;
   border: 1px solid;
   text-align: center;
@@ -165,7 +165,7 @@ label {
   padding: 0.5rem 0rem;
   margin: .2rem .4rem 0 .2rem;
   overflow: hidden;
-  background: rgba(41, 41, 255, 0.5);
+  background: #4682b4;
   border-radius: 5px;
   border: 1px solid white;
   text-align: center;
@@ -195,7 +195,7 @@ h1{
 }
 
 #search-button:active {
-  background-color: rgba(41, 41, 255, 0.5);
+  background-color: #66cdaa;
   color: white;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
@@ -224,7 +224,7 @@ h1{
 
 
 #close-button {
-  background-color: rgba(41, 41, 255, 0.7);
+  background-color: #66cdaa;
   padding: 10px;
   color: white;
   border-radius: 5px;
@@ -236,7 +236,7 @@ h1{
   padding: 10px;
   color: blue;
   border-radius: 5px;
-  border: 1px solid blue;
+  border: 1px solid turquoise;
 
 }
 

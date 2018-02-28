@@ -15,7 +15,7 @@ const HeaderDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   color: white;
-  background-color: rgba(0, 0, 255, 0.7);
+  background-color: #325D81;
 `;
 const Nav = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const SearchBar = styled.div`
   justify-content: space-between;
   align-items: center;
   color: white;
-  background-color: rgba(0, 0, 255, 0.7);
+  background-color: #325D81;
 `;
 
 class Header extends React.Component {
