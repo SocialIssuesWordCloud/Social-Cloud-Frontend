@@ -87,31 +87,28 @@ class App extends Component {
 
   populateCloud = (item) => {
     return <CloudItem style={
-      {fontSize: 
-      item.tweet_volume === null ? 30: 
-      item.tweet_volume < 18000 ? 45 : 
-      item.tweet_volume / 1100 
+      {fontSize:
+      item.tweet_volume === null ? 30:
+      item.tweet_volume < 18000 ? 45 :
+      item.tweet_volume / 1100
       }} text={item.name} key={item.tweet_volume} href={item.url} />;
   };
 
-  findWOEID = id => {
-    return this.state.woeid.find(location => {
-      return location.id === id;
+  findWOEID = search => {
+    return this.state.woeid.find(name => {
+      return name.Name == search;
     });
   };
 
 
 
-  searchAPILocations = event => {
+  searchAPILocations = (event, name) => {
     event.preventDefault();
-    var data = new FormData(event.target);
-    var location = this.findWOEID(parseInt(data.get("APIWoeid")));
+    var location = this.findWOEID(name);
     var woeid = location.WOE_ID;
-    console.log(woeid);
     fetch(baseURL + "tweets/" + woeid)
       .then(response => response.json())
       .then(response => {
-        console.log("searchAPILocations", response);
         this.setState({
           tweets: response.tweets[0].trends
         });
