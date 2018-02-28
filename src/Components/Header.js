@@ -5,10 +5,10 @@ import cloud from "../social-cloud.png";
 import FaBeer from "react-icons/lib/fa/search";
 import SubHeader1 from "./SubHeader";
 
-const top = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+// const top = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `;
 const HeaderDiv = styled.div`
   display: flex;
   flex-direction: row;
@@ -16,12 +16,13 @@ const HeaderDiv = styled.div`
   align-items: center;
   color: white;
   background-color: #325D81;
+  padding: 1rem;
 `;
 const Nav = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  max-height: 70px;
 `;
 const SearchBar = styled.div`
   display: flex;
@@ -47,19 +48,22 @@ class Header extends React.Component {
   render() {
     return <div id="top">
         <HeaderDiv>
-          <img src={cloud} alt="social-cloud" height="100px" />
-          <h1>Social Cloud</h1>
+        <div>
+           <Nav>
+              <img src={cloud} alt="social-cloud" height="100px" />
+              <h1>Social Cloud</h1>
+           </Nav>
+        <h3>View trending social issues by location in real time</h3>
+        </div>
           <Nav>
-            <button id="search-button">
-              <a href="https://siwc-project.firebaseapp.com">About</a>
-            </button>
             <button id="search-button" onClick={this.toggleSubHeader}>
-              Search <FaBeer />
+              Change Location <FaBeer />
             </button>
           </Nav>
         </HeaderDiv>
-        {this.state.SubHeader ? <SearchBar>
-            <SubHeader1 citieswoeid={this.props.citieswoeid} countrywoeid={this.props.countrywoeid} worldcitieswoeid={this.props.worldcitieswoeid} personalLocations={this.props.personalLocations} searchAPILocations={this.props.searchAPILocations} searchAPIPersonalLocations={this.props.searchAPIPersonalLocations}/>
+        {this.state.SubHeader ? 
+          <SearchBar>
+            <SubHeader1 citieswoeid={this.props.citieswoeid} countrywoeid={this.props.countrywoeid} worldcitieswoeid={this.props.worldcitieswoeid} personalLocations={this.props.personalLocations} searchAPILocations={this.props.searchAPILocations} searchAPIPersonalLocations={this.props.searchAPIPersonalLocations} />
           </SearchBar> : null}
       </div>;
   }
