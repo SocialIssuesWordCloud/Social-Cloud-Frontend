@@ -226,56 +226,29 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div className="app-outer">
+    return <div className="app-outer">
         <div className="app-inner">
-          <Header
-            citieswoeid={this.state.citieswoeid}
-            countrywoeid={this.state.countrywoeid}
-            worldcitieswoeid={this.state.worldcitieswoeid}
-            personalLocations={this.state.personalLocations}
-            searchAPILocations={this.searchAPILocations}
-            searchAPIPersonalLocations={this.searchAPIPersonalLocations}
-          />
-          <TagCloud
-            className="tag-cloud"
-            style={{
-              fontFamily: "sans-serif",
-              color: () =>
-                randomColor({
-                  hue: "blue"
-                }),
-              padding: 5
-            }}
-          >
-            {this.state.tweets
-              ? this.state.tweets.map(item => this.populateCloud(item))
-              : null}
+          <Header citieswoeid={this.state.citieswoeid} countrywoeid={this.state.countrywoeid} worldcitieswoeid={this.state.worldcitieswoeid} personalLocations={this.state.personalLocations} searchAPILocations={this.searchAPILocations} searchAPIPersonalLocations={this.searchAPIPersonalLocations} />
+          <TagCloud className="tag-cloud" style={{ fontFamily: "sans-serif", color: () => randomColor({ hue: "blue" }), padding: 5 }}>
+            {this.state.tweets ? this.state.tweets.map(item => this.populateCloud(item)) : null}
           </TagCloud>
         </div>
         <div id="modals">
           <div id="crud-button">
-            <AddPlace
-              personalLocations={this.state.personalLocations}
-              addPlaces={this.addPlaces}
-            />
+            <AddPlace personalLocations={this.state.personalLocations} addPlaces={this.addPlaces} />
           </div>
           <div id="crud-button">
-            <UpdatePlace
-              personalLocations={this.state.personalLocations}
-              updatePlace={this.updatePlace}
-            />
+            <UpdatePlace personalLocations={this.state.personalLocations} updatePlace={this.updatePlace} />
           </div>
 
           <div id="crud-button">
-            <DeletePlace
-              personalLocations={this.state.personalLocations}
-              deletePlace={this.deletePlace}
-            />
+            <DeletePlace personalLocations={this.state.personalLocations} deletePlace={this.deletePlace} />
           </div>
-        </div>
+          
+          <div id="crud-button">
+          </div>
       </div>
-    );
+    </div>
   }
 }
 

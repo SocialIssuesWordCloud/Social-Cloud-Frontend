@@ -12,10 +12,10 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   letter-spacing: 1px;
   margin: 0;
-  padding: 0;
+  padding-left: .5rem;
   text-align: center;
 }
 
@@ -162,7 +162,7 @@ label {
   font-size: 1.5rem;
   min-width: 150px;
   max-width: 250px;
-  padding: 0.5rem 0rem;
+  padding: .5rem;
   margin: .2rem .4rem 0 .2rem;
   overflow: hidden;
   background: #4682b4;
@@ -172,14 +172,19 @@ label {
   color: white;
 }
 
-h1{
-  margin-left: 16rem;
+/* h1{
+  margin-left: 1rem;
+} */
+
+h3{
+  margin:.5rem;
 }
+
 #search-button:hover {
   font-size: 1.5rem;
   min-width: 150px;
   max-width: 250px;
-  padding: 0.5rem 0rem;
+  padding: .5rem;
   margin: .2rem .4rem 0 .2rem;
   overflow: hidden;
   background: white;
