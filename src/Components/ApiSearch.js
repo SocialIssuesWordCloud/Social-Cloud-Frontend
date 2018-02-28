@@ -25,7 +25,7 @@ export class SearchAPI extends React.Component {
   render() {
     return <div>
     <form id="search-form" onSubmit={(e) => this.props.searchAPILocations(e, this.state.Name)}>
-          <label id="padding-test" htmlFor="APIWoeid">
+    <label id="padding-test" htmlFor="APIWoeid">
             Search by City:
           </label>
           <VirtualizedSelect name="APIWoeid" id="APIWoeid" options={this.props.personalLocations.map(item =>
