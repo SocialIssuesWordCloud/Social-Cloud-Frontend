@@ -47,7 +47,7 @@ class Header extends React.Component {
   render() {
     return <div id="top">
         <HeaderDiv>
-          <img src={cloud} alt="social-cloud" height="1px" />
+          <img src={cloud} alt="social-cloud" height="100px" />
           <h1>Social Cloud</h1>
           <Nav>
             <button id="search-button">
