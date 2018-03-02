@@ -8,10 +8,11 @@ As events unfold in the world, social media becomes the place people engage with
 ## Group Members
 - [Bryan Long](https://github.com/BryanLong14)
 - [SarahEvelynn Johnson](https://github.com/sarahevelynn)
+    - Contact **SarahEvelynnJohnson@gmail.com**
 - [Ben Casalino](https://github.com/bencasalino)
 - [Dan Beerman](https://github.com/lebeerman)
 
-### What's Coming? 
-- Sortable content from different sources: 
+### What's Coming?
+- Sortable content from different sources:
   - Twitter, Reddit, FaceBook
-  - Saved searches by user and by day, documenting the major social trends via user interaction over time. 
+  - Saved searches by user and by day, documenting the major social trends via user interaction over time.
