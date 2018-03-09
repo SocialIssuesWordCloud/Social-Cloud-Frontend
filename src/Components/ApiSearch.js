@@ -24,11 +24,11 @@ export class SearchAPI extends React.Component {
 
   render() {
     return <div>
-    <form id="search-form" onSubmit={(e) => this.props.searchAPIPersonalLocations(e, this.state.Name)}>
+    <form id="search-form" onSubmit={(e) => this.props.searchAPILocations(e, this.state.Name)}>
     <label id="padding-test" htmlFor="APIWoeid">
-            Search your Locations:
+            Search  Locations:
           </label>
-          <VirtualizedSelect name="APIWoeid" id="APIWoeid" options={this.props.personalLocations.map(item =>
+          <VirtualizedSelect name="APIWoeid" id="APIWoeid" options={this.props.category.map(item =>
               this.generateLocations(item)
             )} onClick={e => this.change(e)} onChange={e => this.change(e)} value={this.state.Name} />
           <input type="submit" id="search-button" value="Check Location" />

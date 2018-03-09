@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import cloud from "../social-cloud.png";
 import { SearchAPI } from "./ApiSearch";
-import { SearchAPIUSCity } from "./ApiSearchUSCity";
+import { GetCatagories } from "./ApiSearch0";
 import { SearchAPIWorldCity } from "./ApiSearchWorldCity";
 import { SearchAPICountry } from "./ApiSearchCountry";
 
@@ -27,21 +27,13 @@ class SubHeader1 extends React.Component {
   render() {
     return (
       <HeaderDiv>
-        <SearchAPIUSCity
-          citieswoeid={this.props.citieswoeid}
-          searchAPILocations={this.props.searchAPILocations}
-        />
-        <SearchAPIWorldCity
-          worldcitieswoeid={this.props.worldcitieswoeid}
-          searchAPILocations={this.props.searchAPILocations}
-        />
-        <SearchAPICountry
-          countrywoeid={this.props.countrywoeid}
-          searchAPILocations={this.props.searchAPILocations}
+        <GetCatagories
+          matchCatagory={this.props.matchCatagory}
         />
         <SearchAPI
-          personalLocations={this.props.personalLocations}
-          searchAPIPersonalLocations={this.props.searchAPIPersonalLocations}
+          woeid={this.props.woeid}
+          searchAPIPersonalLocations={this.props.searchAPILocations}
+          Category = {this.props.Category}
         />
       </HeaderDiv>
     );
