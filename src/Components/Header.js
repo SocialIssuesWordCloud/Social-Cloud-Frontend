@@ -49,13 +49,13 @@ class Header extends React.Component {
     return <div id="top">
         <HeaderDiv>
           <div>
-              <a href="https://siwc-project.firebaseapp.com">
+              <a href="https://siwc-project.firebaseapp.com/">
             <Nav>
                 <img src={cloud} alt="social-cloud" height="100px" />
                 <h1>Social Cloud</h1>
             </Nav>
               </a>
-            <h3>View trending social issues by location in real time</h3>
+            <h3 id="tagline">View trending social issues by location in real time</h3>
           </div>
           <Nav>
             <button id="search-button" onClick={this.toggleSubHeader}>

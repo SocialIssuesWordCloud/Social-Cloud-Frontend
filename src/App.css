@@ -246,8 +246,14 @@ h3{
 
 #padding-test {
   padding-right: 20px;
-  font-size: .8rem;
+  font-size: 1rem;
   color: white;
+}
+
+#tagline{
+  padding-left: 4rem;
+  font-size: 1.5rem;
+  font-style: italic;
 }
 
 button{
