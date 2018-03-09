@@ -75,9 +75,9 @@ label{
 #delete-button:hover,
 #update-button:hover,
 #add-button:hover {
-  color:blue;
+  color:#3b5d7e;
   background-color: white;
-  border: 1px solid blue;
+  border: 1px solid #3b5d7e;
   cursor: pointer;
   font-size: 1rem;
 
@@ -188,7 +188,7 @@ h3{
   margin: .2rem .4rem 0 .2rem;
   overflow: hidden;
   background: white;
-  color: black;
+  color: #3b5d7e;
   border-radius: 5px;
   border: 1px solid;
   text-align: center;
@@ -200,11 +200,9 @@ h3{
 }
 
 #search-button:active {
-  background-color: #66cdaa;
+  background-color: #23374b;
   color: white;
   box-shadow: 0 5px #666;
-  transform: translateY(4px);
-    margin-top: 10px;
 }
 
 #modals {
