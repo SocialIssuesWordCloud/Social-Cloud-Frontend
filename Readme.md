@@ -11,7 +11,7 @@ As events unfold in the world, social media becomes the place people engage with
     - Contact **SarahEvelynnJohnson@gmail.com**
 - [Ben Casalino](https://github.com/bencasalino)
 - [Dan Beerman](https://github.com/lebeerman) 
-    - Contact **hi@danbeerman.com**, @tobedaniel on Twitter
+    - Contact **hi@danbeerman.com**
 
 Let us know what you think!
 
