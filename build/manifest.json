@@ -5,7 +5,7 @@
  "version": "1",
  "author": "SarahEvelynn Johnson",
 "browser_action": {
-   "default_icon": "social-cloud.png",
+   "default_icon": "./src/social-cloud.png",
    "default_title":"Let us see what is trending"
  },
 "chrome_url_overrides" : {
