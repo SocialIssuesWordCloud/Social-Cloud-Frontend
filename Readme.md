@@ -7,12 +7,30 @@ As events unfold in the world, social media becomes the place people engage with
 
 ## Group Members
 - [Bryan Long](https://github.com/BryanLong14)
+    - Contact **BryanLong1@gmail.com**
 - [SarahEvelynn Johnson](https://github.com/sarahevelynn)
     - Contact **SarahEvelynnJohnson@gmail.com**
 - [Ben Casalino](https://github.com/bencasalino)
+    - Contact **BenCasalino@gmail.com**
 - [Dan Beerman](https://github.com/lebeerman)
+    - Contact **hi@danbeerman.com**
+
+Let us know what you think!
 
 ### What's Coming?
 - Sortable content from different sources:
   - Twitter, Reddit, FaceBook
-  - Saved searches by user and by day, documenting the major social trends via user interaction over time.
+- Mobile Responsive Design // Cross-platform Optimization
+- UI/UX modifications for search, locations, and general usibility
+
+
+### Tech Used
+* React + Styled Components + React-word-cloud
+* Firebase Cloud Services for Single Page App hosting
+* Node/Javascript/Express
+* Heroku Cloud Services
+* Postgres + SQL + Knex
+* Cypress for Integration Testing in the Chrome browser
+
+### License
+MIT
