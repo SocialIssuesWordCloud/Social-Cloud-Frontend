@@ -7,6 +7,7 @@ As events unfold in the world, social media becomes the place people engage with
 
 ## Group Members
 - [Bryan Long](https://github.com/BryanLong14)
+ - Contact **BryanLong1@gmail.com**
 - [SarahEvelynn Johnson](https://github.com/sarahevelynn)
     - Contact **SarahEvelynnJohnson@gmail.com**
 - [Ben Casalino](https://github.com/bencasalino)
