@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Social Cloud
 [Deployed Link](https://social-cloud-trends.firebaseapp.com)
 
@@ -34,6 +35,8 @@ Let us know what you think!
 
 ### License
 MIT
+||||||| merged common ancestors
+=======
 ## Social Cloud
 [Deployed Link](https://social-cloud-trends.firebaseapp.com)
 
@@ -52,3 +55,4 @@ As events unfold in the world, social media becomes the place people engage with
 - Sortable content from different sources:
   - Twitter, Reddit, FaceBook
   - Saved searches by user and by day, documenting the major social trends via user interaction over time.
+>>>>>>> presentation
