@@ -7,13 +7,11 @@ As events unfold in the world, social media becomes the place people engage with
 
 ## Group Members
 - [Bryan Long](https://github.com/BryanLong14)
-    - Contact **BryanLong1@gmail.com**
 - [SarahEvelynn Johnson](https://github.com/sarahevelynn)
     - Contact **SarahEvelynnJohnson@gmail.com**
 - [Ben Casalino](https://github.com/bencasalino)
-    - Contact **BenCasalino@gmail.com**
 - [Dan Beerman](https://github.com/lebeerman) 
-    - Contact **hi@danbeerman.com**
+    - Contact **hi@danbeerman.com**, @tobedaniel on Twitter
 
 Let us know what you think!
 
@@ -24,6 +22,7 @@ Let us know what you think!
 - UI/UX modifications for search, locations, and general usibility
 
 
+
 ### Tech Used
 * React + Styled Components + React-word-cloud
 * Firebase Cloud Services for Single Page App hosting
@@ -31,6 +30,7 @@ Let us know what you think!
 * Heroku Cloud Services
 * Postgres + SQL + Knex
 * Cypress for Integration Testing in the Chrome browser
+
 
 ### License
 MIT
