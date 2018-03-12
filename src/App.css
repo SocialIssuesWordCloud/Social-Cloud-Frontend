@@ -74,7 +74,7 @@ label {
 #delete-button:hover,
 #update-button:hover,
 #add-button:hover {
-  color: #3b5d7e;
+  color:#3b5d7e;
   background-color: white;
   border: 1px solid #3b5d7e;
   cursor: pointer;
@@ -157,8 +157,8 @@ label {
   font-size: 1.5rem;
   min-width: 150px;
   max-width: 250px;
-  padding: 0.5rem;
-  margin: 0.2rem 0.4rem 0 0.2rem;
+  padding: .5rem;
+  margin: .2rem .4rem .5rem .2rem;
   overflow: hidden;
   background: #4682b4;
   border-radius: 10px;
@@ -174,6 +174,14 @@ h3 {
 #search-button:hover {
   background: white;
   color: #3b5d7e;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+}
+
+.qUawM{
+  width: 100%;
+  margin: 15px;
 }
 
 #search-button:active {
@@ -222,13 +230,12 @@ h3 {
   font-size: 1rem;
   color: white;
 }
-
 #tagline {
   padding-left: 4rem;
   font-size: 1.5rem;
   font-style: italic;
 }
 
-button {
+button{
   max-height: 70px !important;
 }

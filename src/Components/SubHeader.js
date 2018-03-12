@@ -4,8 +4,6 @@ import styled from "styled-components";
 import cloud from "../social-cloud.png";
 import { SearchAPI } from "./ApiSearch";
 import { GetCategories } from "./ApiSearch0";
-import { SearchAPIWorldCity } from "./ApiSearchWorldCity";
-import { SearchAPICountry } from "./ApiSearchCountry";
 
 const HeaderDiv = styled.div`
   display: flex;

@@ -5,14 +5,14 @@ import VirtualizedSelect from 'react-virtualized-select';
 
 export class SearchAPI extends React.Component {
   state = {
-    Name: 'Denver'
+    Name: ""
   };
   generateLocations = location => {
     return { label: location.Name, value: location.Name };
   };
   change = event => {
     if (event == null) {
-      return this.setState({ Name: 'Denver' });
+      return this.setState({ Name: "Denver" });
     }
     this.setState({ Name: event.value });
   };
@@ -27,13 +27,13 @@ export class SearchAPI extends React.Component {
           }}
         >
           <label id="padding-test" htmlFor="APIWoeid">
-            Search Locations:
+            Search from Selected Locations:
           </label>
           <VirtualizedSelect
             name="APIWoeid"
             id="APIWoeid"
-            options={this.props.category[this.props.category.category].map(item =>
-              this.generateLocations(item)
+            options={this.props.category[this.props.category.category].map(
+              item => this.generateLocations(item)
             )}
             onClick={e => this.change(e)}
             onChange={e => this.change(e)}

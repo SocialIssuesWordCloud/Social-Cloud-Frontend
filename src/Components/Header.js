@@ -45,9 +45,7 @@ class Header extends React.Component {
 
   matchCategory = (event, category) => {
     event.preventDefault();
-    console.log(category);
-    this.setState({ category: category });
-    console.log('Matching Category! ', this.state.category);
+   this.setState({ category: category });
   };
 
   render() {
@@ -71,7 +69,6 @@ class Header extends React.Component {
         </HeaderDiv>
         {this.state.SubHeader ? (
           <SearchBar>
-          {console.log('Header State: ', this.state.category)}
             <SubHeader1
               woeid={this.props.woeid}
               matchCategory={this.matchCategory}

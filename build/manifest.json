@@ -2,11 +2,11 @@
  "manifest_version": 2,
  "name": "Social Cloud",
  "description": "The best way for an engaged citizen of the world to keep up with the crazy newscycle we are currently operating within",
- "version": "1.4",
+ "version": "1",
  "author": "SarahEvelynn Johnson",
 "browser_action": {
-   "default_icon": "social-cloud.png",
-   "default_title":"Let's see what's trending"
+   "default_icon": "./src/social-cloud.png",
+   "default_title":"Let us see what is trending"
  },
 "chrome_url_overrides" : {
   "newtab": "index.html"
