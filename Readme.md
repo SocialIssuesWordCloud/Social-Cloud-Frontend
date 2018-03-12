@@ -10,6 +10,7 @@ As events unfold in the world, social media becomes the place people engage with
 - [SarahEvelynn Johnson](https://github.com/sarahevelynn)
     - Contact **SarahEvelynnJohnson@gmail.com**
 - [Ben Casalino](https://github.com/bencasalino)
+    - Contact **BenCasalino@gmail.com**
 - [Dan Beerman](https://github.com/lebeerman)
 
 ### What's Coming?
