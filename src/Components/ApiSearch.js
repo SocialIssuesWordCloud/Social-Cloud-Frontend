@@ -1,7 +1,7 @@
-import React from "react";
-import Select from "react-select";
-import "react-select/dist/react-select.css";
-import VirtualizedSelect from "react-virtualized-select";
+import React from 'react';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+import VirtualizedSelect from 'react-virtualized-select';
 
 export class SearchAPI extends React.Component {
   state = {
