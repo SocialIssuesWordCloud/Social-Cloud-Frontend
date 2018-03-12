@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Social Cloud
 [Deployed Link](https://social-cloud-trends.firebaseapp.com)
 
@@ -7,12 +8,11 @@ As events unfold in the world, social media becomes the place people engage with
 
 ## Group Members
 - [Bryan Long](https://github.com/BryanLong14)
-    - Contact **BryanLong1@gmail.com**
 - [SarahEvelynn Johnson](https://github.com/sarahevelynn)
     - Contact **SarahEvelynnJohnson@gmail.com**
 - [Ben Casalino](https://github.com/bencasalino)
 - [Dan Beerman](https://github.com/lebeerman) 
-    - Contact **hi@danbeerman.com**
+    - Contact **hi@danbeerman.com**, @tobedaniel on Twitter
 
 Let us know what you think!
 
@@ -35,6 +35,8 @@ Let us know what you think!
 
 ### License
 MIT
+||||||| merged common ancestors
+=======
 ## Social Cloud
 [Deployed Link](https://social-cloud-trends.firebaseapp.com)
 
@@ -53,3 +55,4 @@ As events unfold in the world, social media becomes the place people engage with
 - Sortable content from different sources:
   - Twitter, Reddit, FaceBook
   - Saved searches by user and by day, documenting the major social trends via user interaction over time.
+>>>>>>> presentation

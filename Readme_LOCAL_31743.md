@@ -7,12 +7,11 @@ As events unfold in the world, social media becomes the place people engage with
 
 ## Group Members
 - [Bryan Long](https://github.com/BryanLong14)
-    - Contact **BryanLong1@gmail.com**
 - [SarahEvelynn Johnson](https://github.com/sarahevelynn)
     - Contact **SarahEvelynnJohnson@gmail.com**
 - [Ben Casalino](https://github.com/bencasalino)
 - [Dan Beerman](https://github.com/lebeerman) 
-    - Contact **hi@danbeerman.com**
+    - Contact **hi@danbeerman.com**, @tobedaniel on Twitter
 
 Let us know what you think!
 
@@ -35,21 +34,3 @@ Let us know what you think!
 
 ### License
 MIT
-## Social Cloud
-[Deployed Link](https://social-cloud-trends.firebaseapp.com)
-
-As events unfold in the world, social media becomes the place people engage with news and social issues. Social Cloud is a web experience that visualizes  real-time Twitter trends by location. The intuitive user interface includes Hashtags that are sized according to Tweet volume, and clicking on a trending hashtag will bring the user to the topic on Twitter.  
-
-![Social Cloud Demo](https://github.com/BryanLong14/Social-Cloud-Frontend/blob/master/SocialCloudScreencast.gif)
-
-## Group Members
-- [Bryan Long](https://github.com/BryanLong14)
-- [SarahEvelynn Johnson](https://github.com/sarahevelynn)
-    - Contact **SarahEvelynnJohnson@gmail.com**
-- [Ben Casalino](https://github.com/bencasalino)
-- [Dan Beerman](https://github.com/lebeerman)
-
-### What's Coming?
-- Sortable content from different sources:
-  - Twitter, Reddit, FaceBook
-  - Saved searches by user and by day, documenting the major social trends via user interaction over time.

@@ -20,6 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      default: [{Denver:'Denver'}],
       personalLocations: [],
       woeid: [],
       countrywoeid: [],
@@ -218,9 +219,7 @@ class App extends Component {
       })
     })
       .then(() => this.componentDidMount())
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(error => console.log(error));
   };
 
   render() {
@@ -228,17 +227,23 @@ class App extends Component {
       <div className="app-outer">
         <div className="app-inner">
           <Header
+            default={this.state.default}
+            personalLocations={this.state.personalLocations}
             citieswoeid={this.state.citieswoeid}
             countrywoeid={this.state.countrywoeid}
             worldcitieswoeid={this.state.worldcitieswoeid}
-            personalLocations={this.state.personalLocations}
+            woeid={this.state.woeid}
             searchAPILocations={this.searchAPILocations}
             searchAPIPersonalLocations={this.searchAPIPersonalLocations}
           />
           <TagCloud
             target="_blank"
             className="tag-cloud"
-            style={{ fontFamily: 'sans-serif', color: () => randomColor({ hue: 'blue' }), padding: 5 }}
+            style={{
+              fontFamily: 'sans-serif',
+              color: () => randomColor({ hue: 'blue' }),
+              padding: 5
+            }}
           >
             {this.state.tweets ? this.state.tweets.map(item => this.populateCloud(item)) : null}
           </TagCloud>

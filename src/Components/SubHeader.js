@@ -3,23 +3,23 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import cloud from "../social-cloud.png";
 import { SearchAPI } from "./ApiSearch";
-import { SearchAPIUSCity } from "./ApiSearchUSCity";
+import { GetCategories } from "./ApiSearch0";
 import { SearchAPIWorldCity } from "./ApiSearchWorldCity";
 import { SearchAPICountry } from "./ApiSearchCountry";
 
 const HeaderDiv = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: row-wrap;
+  justify-content: space-around;
   align-items: center;
-  height: 100px;
+  height: 125px;
   color: black;
   padding-right: 20px;
 `;
 const Nav = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `;
 
@@ -27,21 +27,15 @@ class SubHeader1 extends React.Component {
   render() {
     return (
       <HeaderDiv>
-        <SearchAPIUSCity
-          citieswoeid={this.props.citieswoeid}
-          searchAPILocations={this.props.searchAPILocations}
-        />
-        <SearchAPIWorldCity
-          worldcitieswoeid={this.props.worldcitieswoeid}
-          searchAPILocations={this.props.searchAPILocations}
-        />
-        <SearchAPICountry
-          countrywoeid={this.props.countrywoeid}
-          searchAPILocations={this.props.searchAPILocations}
+        <GetCategories
+          matchCategory={this.props.matchCategory}
+          category={this.props}
         />
         <SearchAPI
-          personalLocations={this.props.personalLocations}
-          searchAPIPersonalLocations={this.props.searchAPIPersonalLocations}
+          woeid={this.props.woeid}
+          default={this.prop}
+          searchAPILocations={this.props.searchAPILocations}
+          category={this.props}
         />
       </HeaderDiv>
     );
